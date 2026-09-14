@@ -1075,21 +1075,18 @@
   .download h2{font-size:32px;font-weight:800;color:var(--green-900);text-align:left;margin-bottom:14px;}
   .download p{color:var(--ink-soft);font-size:15px;max-width:440px;margin-bottom:28px;}
   .store-badges{display:flex;gap:14px;flex-wrap:wrap;}
-  .store-btn{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:var(--green-900);
-    color:#fff;
-    padding:12px 20px;
-    border-radius:12px;
-    transition:transform .2s ease, background .2s ease;
+  .store-badge-link{
+    display:inline-block;
+    line-height:0;
+    transition:transform .2s ease, filter .2s ease;
   }
-  .store-btn:hover{transform:translateY(-3px);background:var(--green-800);}
-  .store-btn .glyph{font-size:22px;}
-  .store-btn .store-text{line-height:1.2;}
-  .store-btn .store-text small{display:block;font-size:10px;opacity:0.75;}
-  .store-btn .store-text strong{font-size:15px;font-weight:700;}
+  .store-badge-link:hover{transform:translateY(-3px);filter:brightness(1.05);}
+  .store-badge-img{
+    height:52px;
+    width:auto;
+    display:block;
+    border-radius:10px;
+  }
   .download-visual{
     display:flex;
     justify-content:center;
@@ -1237,6 +1234,7 @@
     .download-copy{text-align:center;}
     .download p{margin-left:auto;margin-right:auto;}
     .store-badges{justify-content:center;}
+    .store-badge-img{height:48px;}
   }
 
   @media (max-width:768px){
@@ -1653,13 +1651,11 @@
     <h2>Take TaskPilot with you, everywhere</h2>
     <p>Download the app and start planning your day in seconds. Available on iOS and Android, and it works offline too.</p>
     <div class="store-badges">
-      <a href="#" class="store-btn">
-        <span class="glyph">🍎</span>
-        <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+      <a href="#" class="store-badge-link" aria-label="Download on the App Store">
+        <img src="app-store-badge.png" alt="Download on the App Store" class="store-badge-img">
       </a>
-      <a href="#" class="store-btn">
-        <span class="glyph">▶</span>
-        <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+      <a href="#" class="store-badge-link" aria-label="Get it on Google Play">
+        <img src="google-play-badge.png" alt="Get it on Google Play" class="store-badge-img">
       </a>
     </div>
   </div>
