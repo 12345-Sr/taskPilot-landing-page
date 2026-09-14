@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="TaskPilot helps you plan, remember and complete your daily tasks. Stay organized, build better habits and achieve your goals — one day at a time.">
+<meta name="description" content="TaskPilot by Deific Digital (Deific Enterprises) helps you plan, remember and complete your daily tasks. Stay organized, build better habits and achieve your goals — one day at a time.">
 <meta property="og:title" content="TaskPilot — Plan Today. Achieve Tomorrow.">
 <meta property="og:description" content="Your daily productivity companion. Free to start, no credit card required, works offline.">
 <meta property="og:type" content="website">
-<title>TaskPilot — Plan Today. Achieve Tomorrow.</title>
+<title>TaskPilot — Plan Today. Achieve Tomorrow. | Deific Digital</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 12L22 2L14 22L11 13L2 12Z' fill='%231c7a4e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1166,6 +1166,47 @@
   }
   .faq-item.open .faq-answer{max-height:220px;}
 
+
+
+  /* ===== Deific Digital Brand ===== */
+  .deific-brand{display:flex;align-items:center;gap:12px;margin-top:18px;}
+  .deific-logo{width:42px;height:42px;border-radius:10px;object-fit:cover;box-shadow:0 6px 16px rgba(15,42,34,.10);}
+  .deific-brand-copy{line-height:1.3;}
+  .deific-brand-copy strong{display:block;font-size:13px;font-weight:800;color:var(--green-900);}
+  .deific-brand-copy span{display:block;font-size:11px;color:var(--ink-soft);margin-top:2px;}
+  .footer-legal-note{margin-top:14px;font-size:11.5px;color:var(--ink-soft);max-width:360px;}
+  .legal-link{background:none;border:0;padding:0;font:inherit;color:var(--green-700);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+
+  /* ===== Terms Modal ===== */
+  .terms-overlay{position:fixed;inset:0;background:rgba(15,42,34,.58);display:flex;align-items:center;justify-content:center;padding:18px;z-index:300;opacity:0;pointer-events:none;transition:opacity .25s ease;}
+  .terms-overlay.open{opacity:1;pointer-events:auto;}
+  .terms-card{background:#fff;width:min(920px,100%);max-height:min(88vh,900px);overflow:auto;border-radius:24px;box-shadow:0 30px 80px rgba(15,42,34,.30);transform:translateY(18px) scale(.98);transition:transform .3s ease;}
+  .terms-overlay.open .terms-card{transform:translateY(0) scale(1);}
+  .terms-head{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);z-index:2;padding:24px 28px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:18px;}
+  .terms-head h2{font-size:25px;font-weight:800;color:var(--green-900);margin:0;}
+  .terms-head p{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .terms-close{width:36px;height:36px;border:0;border-radius:50%;background:var(--green-soft);color:var(--green-800);font-size:17px;cursor:pointer;flex-shrink:0;}
+  .terms-body{padding:28px;}
+  .terms-body section{margin-bottom:24px;}
+  .terms-body h3{font-size:16px;color:var(--green-900);font-weight:800;margin-bottom:7px;}
+  .terms-body p,.terms-body li{font-size:13px;color:var(--ink-soft);line-height:1.75;}
+  .terms-body ul{list-style:disc;padding-left:20px;margin-top:7px;}
+  .terms-body li{margin-bottom:3px;}
+  .terms-intro{background:var(--green-soft);border-radius:14px;padding:16px 18px;margin-bottom:26px;}
+  .terms-intro p{color:var(--green-900);}
+  .terms-footer{border-top:1px solid var(--line);padding:18px 28px;background:#fbfaf6;font-size:11.5px;color:var(--ink-soft);}
+  @media(max-width:600px){
+    .terms-overlay{padding:8px;}
+    .terms-card{border-radius:18px;max-height:94vh;}
+    .terms-head{padding:20px 18px 15px;}
+    .terms-head h2{font-size:20px;}
+    .terms-body{padding:20px 18px;}
+    .terms-body p,.terms-body li{font-size:12.5px;}
+    .terms-footer{padding:16px 18px;}
+    .deific-brand{justify-content:center;}
+    .footer-legal-note{margin-left:auto;margin-right:auto;}
+  }
+
   @media (max-width:980px){
     .nav-links{display:none;}
     .burger{display:block;}
@@ -1456,7 +1497,7 @@
     <div class="feature-grid">
       <div class="feature reveal reveal-delay-1">
         <div class="icon">📅</div>
-        <h3>Smart Reminders</h3>
+        <h3>Smart Tasks</h3>
         <p>Never miss important tasks again.</p>
       </div>
       <div class="feature reveal reveal-delay-2">
@@ -1476,7 +1517,7 @@
       </div>
       <div class="feature reveal reveal-delay-5">
         <div class="icon">👑</div>
-        <h3>Premium Features</h3>
+        <h3>Pro Features</h3>
         <p>Unlock more with TaskPilot Pro.</p>
       </div>
       <div class="feature reveal reveal-delay-6">
@@ -1496,7 +1537,7 @@
       <p class="desc">TaskPilot makes productivity easy with a clean interface, smart features and a focus on what really matters.</p>
       <ul class="how-list">
         <li><span class="tick">✓</span> Plan your tasks</li>
-        <li><span class="tick">✓</span> Get timely reminders</li>
+        <li><span class="tick">✓</span> Get timely tasks</li>
         <li><span class="tick">✓</span> Track your progress</li>
         <li><span class="tick">✓</span> Build better habits</li>
       </ul>
@@ -1526,7 +1567,7 @@
         <div class="priority-row">
           <span class="high">High</span><span class="medium">Medium</span><span class="normal">Normal</span>
         </div>
-        <div class="field-label">Reminder</div>
+        <div class="field-label">Task</div>
         <div class="mock-field">30 min before</div>
         <div class="mock-save">Save Task</div>
       </div>
@@ -1550,21 +1591,21 @@
   <div class="wrap">
     <div class="section-eyebrow reveal" style="text-align:center;">LIVE DEMO</div>
     <h2 class="reveal" style="text-align:center;">Try the free plan</h2>
-    <p class="sub reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Add reminders below — free accounts get 3 per day. Streak tracking unlocks with Premium.</p>
+    <p class="sub reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Add tasks below — the Free Plan allows up to 3 tasks. Pro unlocks unlimited task creation and repeat functionality.</p>
     <div class="demo-card reveal reveal-delay-1">
       <div class="demo-header">
         <div>
-          <h4>Today's Reminders</h4>
-          <span class="demo-limit-label" id="demoLimitLabel">0 / 3 free reminders used today</span>
+          <h4>Today's Tasks</h4>
+          <span class="demo-limit-label" id="demoLimitLabel">0 / 3 free tasks used</span>
         </div>
-        <button class="demo-streak" id="demoStreakBadge">🔒 Streak tracking — Premium</button>
+        <button class="demo-streak" id="demoProBadge">🔒 Repeat functionality — Pro</button>
       </div>
       <div class="demo-list" id="demoList">
-        <div class="demo-empty" id="demoEmpty">No reminders yet — add your first one below.</div>
+        <div class="demo-empty" id="demoEmpty">No tasks yet — add your first one below.</div>
       </div>
       <div class="demo-input-row">
-        <input type="text" id="demoInput" placeholder="e.g. Drink water at 4 PM" maxlength="40">
-        <button class="btn btn-primary" id="demoAddBtn">+ Add Reminder</button>
+        <input type="text" id="demoInput" placeholder="e.g. Client meeting at 4 PM" maxlength="40">
+        <button class="btn btn-primary" id="demoAddBtn">+ Add Task</button>
       </div>
     </div>
   </div>
@@ -1581,7 +1622,7 @@
         <div class="price-amount">₹0 <span>/ forever</span></div>
         <div class="price-desc">Everything you need to get started with daily planning.</div>
         <ul class="price-features">
-          <li><span class="tick">✓</span> 3 reminders per day</li>
+          <li><span class="tick">✓</span> Up to 3 tasks</li>
           <li><span class="tick">✓</span> Basic task management</li>
           <li><span class="tick">✓</span> Progress tracking</li>
           <li><span class="tick">✓</span> Works offline</li>
@@ -1590,17 +1631,17 @@
       </div>
       <div class="price-card featured reveal reveal-delay-2">
         <span class="price-badge">Most Popular</span>
-        <div class="price-plan">Premium</div>
-        <div class="price-amount">₹399 <span>/ month</span></div>
-        <div class="price-desc">For people who want unlimited planning power.</div>
+        <div class="price-plan">Pro</div>
+        <div class="price-amount">₹399 <span>/ 30 days</span></div>
+        <div class="price-desc">For people who want unlimited task creation and repeat functionality.</div>
         <ul class="price-features">
-          <li><span class="tick">✓</span> Unlimited reminders</li>
-          <li><span class="tick">✓</span> Streak tracking</li>
-          <li><span class="tick">✓</span> Advanced progress insights</li>
-          <li><span class="tick">✓</span> Multiple languages</li>
-          <li><span class="tick">✓</span> Priority support</li>
+          <li><span class="tick">✓</span> Unlimited task creation</li>
+          <li><span class="tick">✓</span> Repeat tasks across selected dates</li>
+          <li><span class="tick">✓</span> Timeline &amp; repeat functionality</li>
+          <li><span class="tick">✓</span> Additional Pro functionality</li>
+          <li><span class="tick">✓</span> 30 days of Pro access</li>
         </ul>
-        <a href="#" class="btn btn-white" id="pricingPremiumBtn">Upgrade to Premium</a>
+        <a href="#" class="btn btn-white" id="pricingProBtn">Upgrade to Pro</a>
       </div>
     </div>
   </div>
@@ -1641,35 +1682,35 @@
           Is TaskPilot really free to use?
           <span class="icon-toggle">+</span>
         </button>
-        <div class="faq-answer"><p>Yes. The Free plan gives you up to 10 tasks a day, reminders, and progress tracking with no credit card required. You can upgrade to Pro anytime for unlimited tasks and extra features.</p></div>
+        <div class="faq-answer"><p>The Free Plan allows you to create up to 3 tasks. Once the maximum is reached, additional tasks require Pro access.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-2">
         <button class="faq-question">
           Does TaskPilot work without an internet connection?
           <span class="icon-toggle">+</span>
         </button>
-        <div class="faq-answer"><p>Yes. TaskPilot is designed to work offline, so you can plan and check off tasks even without a connection. Everything syncs automatically once you're back online.</p></div>
+        <div class="faq-answer"><p>TaskPilot is designed to support task planning and management. Availability of offline functionality may depend on the app version, device, and service configuration.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-3">
         <button class="faq-question">
-          What is streak tracking?
+          What is repeat functionality?
           <span class="icon-toggle">+</span>
         </button>
-        <div class="faq-answer"><p>Streak tracking shows how many days in a row you've completed your reminders, helping you build consistent habits over time. It's a Premium feature available for ₹399/month.</p></div>
+        <div class="faq-answer"><p>Pro costs ₹399 for 30 days and provides additional functionality, including unlimited task creation and the ability to reuse or repeat previously created tasks across selected dates or periods using available timeline/repeat functionality.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-4">
         <button class="faq-question">
           Is my data safe and private?
           <span class="icon-toggle">+</span>
         </button>
-        <div class="faq-answer"><p>Yes. Your tasks and personal data are encrypted and never sold or shared with third parties. You're always in control of your information.</p></div>
+        <div class="faq-answer"><p>You retain ownership of task content you create. TaskPilot processes and stores task information to provide task-management and task functionality. Task content is not sold for advertising purposes and is not publicly displayed through the Service.</p></div>
       </div>
       <div class="faq-item reveal reveal-delay-5">
         <button class="faq-question">
           Can I cancel my Pro subscription anytime?
           <span class="icon-toggle">+</span>
         </button>
-        <div class="faq-answer"><p>Absolutely. You can cancel your Premium subscription at any time from your account settings, no questions asked, and you'll keep access until the end of your billing period.</p></div>
+        <div class="faq-answer"><p>Pro subscriptions currently do not automatically renew. Pro access remains available for 30 days from the applicable purchase or activation period. After expiry, another purchase is required to continue using Pro features.</p></div>
       </div>
     </div>
   </div>
@@ -1681,7 +1722,7 @@
       <div class="reveal">
         <span class="tag">REAL IMPACT</span>
         <h2>Real People. Real Progress.</h2>
-        <p>Join thousands of people who are building better habits with TaskPilot.</p>
+        <p>A simple productivity experience designed for planning, scheduling, and managing tasks.</p>
       </div>
       <div class="stats reveal reveal-delay-1">
         <div class="stat">
@@ -1722,7 +1763,7 @@
             <span>Student</span>
           </div>
         </div>
-        <p>"The reminders are a lifesaver! I'm more productive and less stressed now."</p>
+        <p>"The tasks are a lifesaver! I'm more productive and less stressed now."</p>
         <div class="stars">★★★★★</div>
       </div>
       <div class="t-card reveal reveal-delay-3">
@@ -1765,6 +1806,14 @@
           <span class="logo-text">Task<span class="pilot">Pilot</span></span>
         </a>
         <p>Plan Today. Achieve Tomorrow.</p>
+        <div class="deific-brand" aria-label="Product by Deific Digital">
+          <img class="deific-logo" src="data:image/png;base64,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" alt="Deific Digital logo">
+          <div class="deific-brand-copy">
+            <strong>Product by Deific Digital</strong>
+            <span>Deific Enterprises</span>
+          </div>
+        </div>
+        <p class="footer-legal-note">TaskPilot is a productivity product by Deific Digital (Deific Enterprises). Your use of TaskPilot is subject to our <button type="button" class="legal-link" id="termsLink">Terms &amp; Conditions</button>.</p>
       </div>
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
@@ -1782,10 +1831,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 TaskPilot. All rights reserved.</span>
+      <span>© 2026 Deific Digital (Deific Enterprises). All rights reserved. TaskPilot is a product by Deific Digital.</span>
       <div class="flinks">
         <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#" id="termsFooterLink">Terms &amp; Conditions</a>
         <a href="#">Support</a>
       </div>
     </div>
@@ -1794,20 +1843,53 @@
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
+<div class="terms-overlay" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+  <div class="terms-card">
+    <div class="terms-head">
+      <div><h2 id="termsTitle">Task Pilot — Terms &amp; Conditions</h2><p>Last Updated: September 2026</p></div>
+      <button class="terms-close" id="termsCloseBtn" aria-label="Close Terms &amp; Conditions">✕</button>
+    </div>
+    <div class="terms-body">
+      <div class="terms-intro"><p>Welcome to Task Pilot. These Terms &amp; Conditions govern your access to and use of the Task Pilot application and related services. By creating an account or using Task Pilot, you agree to comply with these Terms.</p></div>
+      <section><h3>1. About Task Pilot</h3><p>Task Pilot is a task-management and productivity application designed to help users create, organize, schedule, and manage tasks and tasks. Task Pilot may be used for both personal and business purposes. It is a productivity tool and is not intended to replace professional, emergency, medical, legal, financial, or other critical services.</p></section>
+      <section><h3>2. User Accounts</h3><p>To use Task Pilot, you must create an account. During registration, you may be required to provide your name, email address, and password. Your email address must be verified using the verification process provided by Task Pilot. You are responsible for providing accurate information and maintaining the confidentiality of your login credentials. Your account is personal to you and you must not share credentials or allow unauthorized access. You are responsible for activities performed through your account and should notify us if you believe it has been accessed without authorization.</p></section>
+      <section><h3>3. Task and Task Data</h3><p>Users may create, edit, schedule, and delete tasks and tasks. You retain ownership of the task and other content that you create and submit to Task Pilot. Task Pilot processes and stores task information so the Service can provide task-management and task functionality and allow you to access your information. Task Pilot does not sell your task content or use it for advertising purposes. Task information is not publicly displayed or shared with other users through the Service.</p></section>
+      <section><h3>4. Free Plan</h3><p>The Free Plan allows a user to create up to 3 tasks. Once the maximum of 3 tasks has been reached, the user cannot create additional tasks under the Free Plan. Deleting an existing task does not reset or increase the user's task-creation allowance. Additional task-management functionality may require a Pro subscription.</p></section>
+      <section><h3>5. Pro Subscription</h3><p>Task Pilot offers a Pro subscription for ₹399 for 30 days. Pro provides unlimited task creation and the ability to reuse or repeat previously created tasks across selected dates or periods using available timeline/repeat functionality. Pro access remains available for 30 days from the applicable purchase/activation period. Pro subscriptions currently do not automatically renew. After the 30-day period expires, another purchase is required to continue using Pro features. We may introduce, modify, add, or remove subscription features in the future.</p></section>
+      <section><h3>6. Payments</h3><p>Payments for Pro subscriptions are processed through Razorpay or other payment-processing services made available by Task Pilot. By making a purchase, you authorize the applicable payment provider to process the transaction according to its applicable terms and policies. Task Pilot does not store your complete payment-card details on its own servers unless expressly stated otherwise.</p></section>
+      <section><h3>7. Refund Policy</h3><p>All Pro purchases are non-refundable, except where a refund is required by applicable law or where Task Pilot determines that a technical payment issue requires corrective action. If payment is successfully deducted but Pro access is not activated due to a technical issue, you may contact Task Pilot through the available support or ticket system. We may investigate and, where appropriate, activate the purchased service or take another appropriate corrective action.</p></section>
+      <section><h3>8. Notifications and Tasks</h3><p>Task Pilot may send notifications relating to scheduled tasks and tasks. Depending on task settings, task notifications may be sent approximately 10 minutes before the scheduled task and at the scheduled task time. Delivery requires appropriate notification permissions. Task Pilot does not guarantee that every notification will be delivered exactly on time or delivered at all. Notifications may be delayed, interrupted, or missed because of technical issues, device settings, operating-system restrictions, network conditions, third-party services, maintenance, or other circumstances outside our reasonable control. You remain responsible for monitoring and managing your tasks. Task Pilot should not be used as the sole system for emergency, medical, life-critical, hazardous, legal, or other situations where task failure could result in serious harm or loss.</p></section>
+      <section><h3>9. Acceptable Use</h3><p>You agree to use Task Pilot only for lawful purposes.</p><ul><li>Use Task Pilot for illegal activities.</li><li>Attempt to access another user's account or information without authorization.</li><li>Attempt unauthorized access to our systems, servers, databases, or infrastructure.</li><li>Hack, reverse engineer, decompile, disassemble, or derive source code.</li><li>Copy, modify, reproduce, distribute, or create unauthorized derivative versions.</li><li>Introduce malware, viruses, malicious code, or harmful material.</li><li>Use the Service for spam, abuse, harassment, or malicious activities.</li><li>Disrupt, damage, overload, or interfere with the Service or infrastructure.</li><li>Circumvent security measures, usage limits, or access restrictions.</li><li>Violate applicable laws or regulations.</li></ul><p>We reserve the right to take appropriate action against accounts involved in prohibited activities.</p></section>
+      <section><h3>10. Intellectual Property</h3><p>Task Pilot and its underlying technology are owned by or licensed to Task Pilot, including the Task Pilot name, logo and branding, application design and user interface, source code, software, features, graphics, text, and other proprietary materials. Except for the limited right to use the Service in accordance with these Terms, no ownership rights are transferred to you. You may not copy, reproduce, modify, distribute, sell, license, reverse engineer, or create derivative works from any part of Task Pilot without prior written permission. Your ownership of content created within the Service remains unaffected.</p></section>
+      <section><h3>11. Service Availability</h3><p>We aim to keep Task Pilot available and functional, but do not guarantee that the Service will always be available, uninterrupted, error-free, secure, or free from bugs or technical issues. Task Pilot may occasionally be unavailable because of maintenance, upgrades, server issues, security measures, technical problems, or circumstances beyond our reasonable control. We may modify, update, improve, suspend, or discontinue parts of the Service when reasonably necessary.</p></section>
+      <section><h3>12. Changes to Features and Plans</h3><p>Task Pilot may add, modify, improve, restrict, or remove features from the Free or Pro versions. We may also introduce new plans, features, pricing structures, or functionality. If the Pro subscription price changes, the new price will apply to future purchases and will not alter an already-purchased 30-day Pro period.</p></section>
+      <section><h3>13. Third-Party Services</h3><p>Task Pilot may rely on third-party providers for payment processing, email delivery, notifications, hosting, infrastructure, or other technical services, including providers such as Razorpay, Expo, Firebase, Resend, Gmail, hosting providers, or other services used from time to time. Your use of third-party services may also be subject to their own terms and policies. Task Pilot is not responsible for interruptions, failures, or limitations caused solely by third-party services.</p></section>
+      <section><h3>14. Account Suspension and Termination</h3><p>Task Pilot may suspend or terminate your account if we reasonably determine that you violated these Terms or engaged in prohibited, fraudulent, abusive, illegal, or security-threatening activity. This applies to Free and Pro accounts. If termination results from a violation, you will not be entitled to a refund for an unused Pro period, except where required by applicable law. Following termination, task and account data may be retained for a limited period for operational, security, legal, or other legitimate purposes and may subsequently be deleted in accordance with our data-retention practices and Privacy Policy.</p></section>
+      <section><h3>15. Disclaimer</h3><p>Task Pilot is provided as a productivity and task-management service. We do not guarantee that tasks will always be available without interruption, notifications will always be delivered or arrive at the exact intended time, the Service will always be free from errors, or data/functionality will never be temporarily unavailable. You use Task Pilot at your own discretion and risk. Task Pilot is not an emergency alert system and should not be relied upon for emergency, medical, legal, financial, safety-critical, or life-critical matters.</p></section>
+      <section><h3>16. Limitation of Liability</h3><p>To the maximum extent permitted by applicable law, Task Pilot and its owners, operators, employees, affiliates, and service providers will not be liable for indirect, incidental, consequential, special, or punitive damages arising from or related to your use of, or inability to use, the Service. This includes, where permitted by law, losses resulting from missed, delayed, or failed notifications, task availability issues, service interruptions, technical failures, device issues, network problems, or reliance on the Service for critical matters. Nothing in these Terms is intended to exclude or limit liability that cannot legally be excluded or limited under applicable law.</p></section>
+      <section><h3>17. Privacy Policy</h3><p>Your use of Task Pilot is also governed by our Privacy Policy, which explains how we collect, use, store, and protect personal information. Our Privacy Policy forms part of these Terms.</p></section>
+      <section><h3>18. Changes to These Terms</h3><p>We may update these Terms from time to time to reflect changes to the Service, features, pricing, legal requirements, or business practices. When changes are made, we may update the Last Updated date and, where appropriate, provide notice through the application or other reasonable means. Continued use of Task Pilot after updated Terms become effective constitutes acceptance of the revised Terms, to the extent permitted by applicable law.</p></section>
+      <section><h3>19. Governing Law</h3><p>These Terms shall be governed by and interpreted in accordance with the applicable laws of India, without regard to conflict-of-law principles. Any disputes relating to these Terms or the Service shall be subject to the jurisdiction of the courts having appropriate jurisdiction in India, subject to applicable law.</p></section>
+      <section><h3>20. Contact Us</h3><p>If you have questions, concerns, complaints, or support requests regarding these Terms or Task Pilot, you may contact us through the support/contact options provided within the application or through our designated support contact.</p></section>
+    </div>
+    <div class="terms-footer">Task Pilot — A productivity product by Deific Digital (Deific Enterprises) · Last Updated: September 2026</div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="paywallModal">
   <div class="modal-card">
     <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
     <div class="modal-icon">🔒</div>
-    <h3>You've used your 3 free reminders today</h3>
-    <p class="modal-sub">Upgrade to Premium for unlimited reminders and streak tracking to help you build lasting habits.</p>
-    <div class="modal-price">₹399 <span>/ month</span></div>
+    <h3>You've reached the 3-task Free Plan limit</h3>
+    <p class="modal-sub">Upgrade to Pro for unlimited task creation and repeat functionality across selected dates or periods.</p>
+    <div class="modal-price">₹399 <span>/ 30 days</span></div>
     <ul class="modal-features">
-      <li><span class="tick">✓</span> Unlimited reminders every day</li>
-      <li><span class="tick">✓</span> Streak tracking &amp; habit insights</li>
-      <li><span class="tick">✓</span> Advanced progress reports</li>
-      <li><span class="tick">✓</span> Priority support</li>
+      <li><span class="tick">✓</span> Unlimited task creation</li>
+      <li><span class="tick">✓</span> Repeat tasks across selected dates</li>
+      <li><span class="tick">✓</span> Timeline &amp; repeat functionality</li>
+      <li><span class="tick">✓</span> 30 days of Pro access</li>
     </ul>
-    <a href="#pricing" class="btn btn-primary" id="modalUpgradeBtn">Upgrade to Premium</a>
+    <a href="#pricing" class="btn btn-primary" id="modalUpgradeBtn">Upgrade to Pro</a>
     <button class="modal-later" id="modalLaterBtn">Maybe later</button>
   </div>
 </div>
@@ -1887,21 +1969,40 @@
     });
   });
 
-  // Free / Premium reminder demo logic
-  const FREE_REMINDER_LIMIT = 3;
-  let remindersUsedToday = 0;
+  // Terms & Conditions modal
+  const termsModal = document.getElementById('termsModal');
+  const termsCloseBtn = document.getElementById('termsCloseBtn');
+  const termsLink = document.getElementById('termsLink');
+  const termsFooterLink = document.getElementById('termsFooterLink');
+
+  function openTermsModal(){
+    termsModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeTermsModal(){
+    termsModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if(termsLink) termsLink.addEventListener('click', openTermsModal);
+  if(termsFooterLink) termsFooterLink.addEventListener('click', (e) => { e.preventDefault(); openTermsModal(); });
+  if(termsCloseBtn) termsCloseBtn.addEventListener('click', closeTermsModal);
+  if(termsModal) termsModal.addEventListener('click', (e) => { if(e.target === termsModal) closeTermsModal(); });
+
+  // Free / Pro task demo logic
+  const FREE_TASK_LIMIT = 3;
+  let tasksUsed = 0;
 
   const demoInput = document.getElementById('demoInput');
   const demoAddBtn = document.getElementById('demoAddBtn');
   const demoList = document.getElementById('demoList');
   const demoEmpty = document.getElementById('demoEmpty');
   const demoLimitLabel = document.getElementById('demoLimitLabel');
-  const demoStreakBadge = document.getElementById('demoStreakBadge');
+  const demoProBadge = document.getElementById('demoProBadge');
   const paywallModal = document.getElementById('paywallModal');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalLaterBtn = document.getElementById('modalLaterBtn');
   const modalUpgradeBtn = document.getElementById('modalUpgradeBtn');
-  const pricingPremiumBtn = document.getElementById('pricingPremiumBtn');
+  const pricingProBtn = document.getElementById('pricingProBtn');
 
   function openPaywallModal(){
     paywallModal.classList.add('open');
@@ -1913,21 +2014,21 @@
   }
 
   function updateDemoLimitLabel(){
-    const remaining = FREE_REMINDER_LIMIT - remindersUsedToday;
+    const remaining = FREE_TASK_LIMIT - tasksUsed;
     if(remaining > 0){
-      demoLimitLabel.textContent = remindersUsedToday + ' / ' + FREE_REMINDER_LIMIT + ' free reminders used today';
+      demoLimitLabel.textContent = tasksUsed + ' / ' + FREE_TASK_LIMIT + ' free tasks used';
       demoLimitLabel.classList.remove('limit-reached');
-      demoAddBtn.textContent = '+ Add Reminder';
+      demoAddBtn.textContent = '+ Add Task';
       demoAddBtn.classList.remove('limit-reached');
     } else {
-      demoLimitLabel.textContent = 'Free limit reached — 3 / 3 reminders used today';
+      demoLimitLabel.textContent = 'Free limit reached — 3 / 3 tasks used';
       demoLimitLabel.classList.add('limit-reached');
       demoAddBtn.textContent = '🔒 Upgrade to add more';
       demoAddBtn.classList.add('limit-reached');
     }
   }
 
-  function addDemoReminder(text){
+  function addDemoTask(text){
     if(demoEmpty) demoEmpty.remove();
     const item = document.createElement('div');
     item.className = 'demo-item';
@@ -1938,7 +2039,7 @@
 
   if(demoAddBtn){
     demoAddBtn.addEventListener('click', () => {
-      if(remindersUsedToday >= FREE_REMINDER_LIMIT){
+      if(tasksUsed >= FREE_TASK_LIMIT){
         openPaywallModal();
         return;
       }
@@ -1947,8 +2048,8 @@
         demoInput.focus();
         return;
       }
-      addDemoReminder(value);
-      remindersUsedToday++;
+      addDemoTask(value);
+      tasksUsed++;
       updateDemoLimitLabel();
       demoInput.value = '';
       demoInput.focus();
@@ -1959,11 +2060,11 @@
     });
   }
 
-  if(demoStreakBadge){
-    demoStreakBadge.addEventListener('click', openPaywallModal);
+  if(demoProBadge){
+    demoProBadge.addEventListener('click', openPaywallModal);
   }
-  if(pricingPremiumBtn){
-    pricingPremiumBtn.addEventListener('click', (e) => {
+  if(pricingProBtn){
+    pricingProBtn.addEventListener('click', (e) => {
       e.preventDefault();
       openPaywallModal();
     });
@@ -1981,7 +2082,7 @@
     });
   }
   document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && paywallModal.classList.contains('open')) closePaywallModal();
+    if(e.key === 'Escape'){ if(paywallModal.classList.contains('open')) closePaywallModal(); if(termsModal.classList.contains('open')) closeTermsModal(); }
   });
 
   updateDemoLimitLabel();
