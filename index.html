@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1200">
-<meta name="description" content="TaskPilot by Deific Digital (Deific Enterprises) helps you plan, remember and complete your daily tasks. Stay organized, build better habits and achieve your goals — one day at a time.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TaskPilot helps you plan, remember and complete your daily tasks. Stay organized, build better habits and achieve your goals — one day at a time.">
 <meta property="og:title" content="TaskPilot — Plan Today. Achieve Tomorrow.">
 <meta property="og:description" content="Your daily productivity companion. Free to start, no credit card required, works offline.">
 <meta property="og:type" content="website">
-<title>TaskPilot — Plan Today. Achieve Tomorrow. | Deific Digital</title>
+<title>TaskPilot — Plan Today. Achieve Tomorrow.</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 12L22 2L14 22L11 13L2 12Z' fill='%231c7a4e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,8 +38,6 @@
     background:var(--cream);
     line-height:1.5;
     overflow-x:hidden;
-    width:1200px;
-    margin:0 auto;
   }
   ::selection{background:var(--yellow);color:var(--green-900);}
   .scroll-progress{
@@ -301,7 +299,7 @@
     position:absolute;
     inset:0;
     background:radial-gradient(circle at 65% 30%, #fdf3d9 0%, rgba(253,243,217,0) 60%),
-                linear-gradient(180deg, var(--green-soft) 0%, #eaf3ea 100%);
+               linear-gradient(180deg, var(--green-soft) 0%, #eaf3ea 100%);
     border-radius:36px;
     z-index:0;
   }
@@ -1077,27 +1075,21 @@
   .download h2{font-size:32px;font-weight:800;color:var(--green-900);text-align:left;margin-bottom:14px;}
   .download p{color:var(--ink-soft);font-size:15px;max-width:440px;margin-bottom:28px;}
   .store-badges{display:flex;gap:14px;flex-wrap:wrap;}
-  .store-badge{
-    min-width:184px;
-    height:56px;
-    padding:8px 15px;
-    border-radius:10px;
-    background:#111;
-    color:#fff;
-    display:inline-flex;
+  .store-btn{
+    display:flex;
     align-items:center;
-    gap:11px;
-    line-height:1;
-    box-shadow:0 6px 16px rgba(0,0,0,.14);
-    border:1px solid rgba(255,255,255,.14);
-    transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    gap:10px;
+    background:var(--green-900);
+    color:#fff;
+    padding:12px 20px;
+    border-radius:12px;
+    transition:transform .2s ease, background .2s ease;
   }
-  .store-badge:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 10px 22px rgba(0,0,0,.18);}
-  .store-badge-icon{width:31px;height:31px;display:block;flex-shrink:0;}
-  .store-badge-copy{display:flex;flex-direction:column;justify-content:center;gap:2px;text-align:left;}
-  .store-badge-copy small{font-size:9.5px;font-weight:500;letter-spacing:.1px;line-height:1.1;}
-  .store-badge-copy strong{font-size:20px;font-weight:600;line-height:1.05;letter-spacing:-.3px;}
-  .store-links-note{font-size:11px !important;color:var(--ink-soft);margin:10px 0 0 !important;max-width:500px !important;}
+  .store-btn:hover{transform:translateY(-3px);background:var(--green-800);}
+  .store-btn .glyph{font-size:22px;}
+  .store-btn .store-text{line-height:1.2;}
+  .store-btn .store-text small{display:block;font-size:10px;opacity:0.75;}
+  .store-btn .store-text strong{font-size:15px;font-weight:700;}
   .download-visual{
     display:flex;
     justify-content:center;
@@ -1174,544 +1166,884 @@
   }
   .faq-item.open .faq-answer{max-height:220px;}
 
-  /* ===== Deific Digital Brand ===== */
-  .deific-brand{display:flex;align-items:center;gap:12px;margin-top:18px;}
-  .deific-logo{width:42px;height:42px;border-radius:10px;object-fit:cover;box-shadow:0 6px 16px rgba(15,42,34,.10);}
+  @media (max-width:980px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .hero{padding:50px 0 40px;}
+    .hero .wrap{grid-template-columns:1fr;gap:30px;}
+    .hero-copy{text-align:center;}
+    .checks{justify-content:center;}
+    .hero-cta{justify-content:center;}
+    .hero-visual{margin-top:10px;min-height:380px;}
+    .feature-grid{grid-template-columns:repeat(3,1fr);gap:24px 0;}
+    .feature{border-right:none;border-bottom:1px solid var(--line);padding-bottom:24px;}
+    .how .wrap{grid-template-columns:1fr;}
+    .how-copy{text-align:center;}
+    .how-list li{justify-content:center;}
+    .goal-note{text-align:center;}
+    .mock-row{flex-wrap:wrap;justify-content:center;}
+    .impact-top{grid-template-columns:1fr;text-align:center;}
+    .impact-top > div:first-child{text-align:center;margin:0 auto;}
+    .impact-top p{margin-left:auto;margin-right:auto;}
+    .stats{justify-content:center;}
+    .testimonials{grid-template-columns:1fr;}
+    .cta-section{grid-template-columns:1fr;text-align:center;}
+    .cta-left,.cta-right{text-align:center;}
+    .pricing-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto;}
+    .price-card.featured{transform:none;}
+    .price-card.featured:hover{transform:translateY(-6px);}
+    .download{grid-template-columns:1fr;text-align:center;}
+    .download-copy{text-align:center;}
+    .download p{margin-left:auto;margin-right:auto;}
+    .store-badges{justify-content:center;}
+  }
+
+  @media (max-width:768px){
+    .wrap{padding:0 24px;}
+    .nav .logo{font-size:19px;}
+    .nav .btn-primary{padding:10px 18px;font-size:13px;}
+    header.scrolled .nav{padding:10px 0;}
+    .hero{padding:36px 0 30px;}
+    .eyebrow{font-size:12px;padding:7px 14px;}
+    .hero h1{font-size:32px;}
+    .hero p.lead{margin:16px auto 0;font-size:15px;}
+    .checks{gap:14px 18px;font-size:13px;}
+    .hero-cta{gap:16px;margin-top:24px;}
+    .btn-primary{padding:13px 22px;font-size:14px;}
+    .hero-visual{min-height:340px;}
+    .phone{width:210px;padding:10px;border-radius:28px;}
+    .phone-screen{border-radius:20px;}
+    .tag-note{font-size:15px;top:10px;right:2%;}
+    .person{width:170px;}
+
+    .why{padding:56px 0 40px;}
+    .why h2,.how h2,.impact h2{font-size:26px;}
+    .why p.sub{margin-bottom:36px;font-size:14px;}
+    .feature-grid{grid-template-columns:repeat(2,1fr);gap:18px 12px;}
+    .feature{padding:14px 10px;}
+    .feature .icon{width:48px;height:48px;font-size:19px;margin-bottom:12px;}
+    .feature h3{font-size:14px;}
+    .feature p{font-size:12.5px;}
+
+    .how{margin:16px 16px 50px;padding:40px 24px;border-radius:22px;}
+    .how h2{font-size:26px;}
+    .how .tag{font-size:11px;}
+    .mock-row{gap:16px;}
+    .mock-card{width:44%;min-width:160px;padding:12px;}
+
+    .impact{padding:10px 0 56px;}
+    .impact-top{margin-bottom:32px;gap:20px;}
+    .impact h2{font-size:26px;}
+    .stats{gap:22px;}
+    .stat .num{font-size:18px;}
+    .stat .label{font-size:11px;}
+    .t-card{padding:20px;}
+
+    .cta-section{margin:0 16px 44px;padding:44px 28px;border-radius:22px;}
+    .cta-center h2{font-size:24px;}
+    .cta-center p{font-size:13.5px;}
+    .cta-left,.cta-right{font-size:13px;}
+
+    .footer-main{flex-direction:column;align-items:center;text-align:center;gap:24px;}
+    .footer-links{justify-content:center;gap:16px 22px;}
+    .footer-bottom{flex-direction:column;align-items:center;text-align:center;}
+    .footer-bottom .flinks{justify-content:center;}
+    .back-to-top{width:42px;height:42px;right:16px;bottom:16px;font-size:16px;}
+
+    .pricing{padding:10px 0 56px;}
+    .price-card{padding:26px 22px;}
+    .price-amount{font-size:32px;}
+    .download{margin:16px 16px 50px;padding:40px 26px;border-radius:22px;}
+    .download h2{font-size:24px;}
+    .qr-card{width:150px;padding:18px;}
+    .qr-box{width:100px;height:100px;}
+    .faq{padding:10px 0 56px;}
+    .faq-question{font-size:14.5px;}
+    .faq-answer p{font-size:13.5px;}
+
+    .demo{padding:10px 0 50px;}
+    .demo-card{padding:22px 18px;margin-top:32px;}
+    .demo-header{flex-direction:column;align-items:flex-start;gap:10px;}
+    .demo-input-row{flex-direction:column;}
+    .demo-input-row .btn{width:100%;justify-content:center;}
+    .modal-card{padding:28px 22px 24px;}
+    .modal-card h3{font-size:18px;}
+    .modal-icon{width:54px;height:54px;font-size:22px;}
+    .modal-price{font-size:26px;}
+  }
+
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .nav{position:relative;}
+    .hero h1{font-size:30px;line-height:1.18;}
+    .hero p.lead{font-size:14.5px;padding:0 4px;}
+    .checks{flex-direction:column;align-items:center;gap:10px;}
+    .hero-cta{flex-direction:column;gap:18px;}
+    .hero-cta .btn-primary{width:100%;justify-content:center;}
+    .watch{justify-content:center;}
+    .hero-visual{min-height:300px;}
+    .phone{width:180px;}
+    .phone-status{font-size:10px;}
+    .phone-topbar{font-size:13px;}
+    .greet{font-size:13px;}
+    .task-item{font-size:11px;}
+    .tag-note{display:none;}
+    .person{width:130px;}
+
+    .feature-grid{grid-template-columns:repeat(2,1fr);gap:16px 10px;}
+    .how{margin:16px 10px 40px;padding:32px 18px;}
+    .mock-row{flex-direction:column;align-items:center;}
+    .mock-card{width:100%;max-width:260px;}
+    .stats{flex-wrap:wrap;gap:18px 24px;}
+    .stat{width:auto;}
+    .cta-section{margin:0 10px 36px;padding:36px 20px;}
+    .cta-center h2{font-size:22px;}
+  }
+
+  @media (max-width:400px){
+    .hero h1{font-size:27px;}
+    .eyebrow{font-size:11px;padding:6px 12px;}
+    .phone{width:160px;}
+    .feature-grid{grid-template-columns:1fr 1fr;gap:14px 8px;}
+    .footer-links{flex-direction:column;gap:10px;align-items:center;}
+  }
+  @media (max-width:480px){
+    .nav > .btn-primary{display:none;}
+    .nav{padding:14px 0;}
+  }
 </style>
 </head>
 <body>
 
-  <div class="scroll-progress"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- Header -->
-  <header>
-    <div class="wrap nav">
-      <a href="#" class="logo">
-        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M2 12L22 2L14 22L11 13L2 12Z" fill="#1c7a4e"/></svg>
-        Task<span class="pilot">Pilot</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#features" class="active">Features</a>
-        <a href="#how">How it Works</a>
-        <a href="#demo">Live Demo</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a href="#demo" class="btn btn-primary">Get Started Free</a>
-      <button class="burger">&#9776;</button>
-    </div>
-  </header>
+<header id="siteHeader">
+  <nav class="nav wrap">
+    <a href="#home" class="logo">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <path d="M2 12L22 2L14 22L11 13L2 12Z" fill="#1c7a4e"/>
+      </svg>
+      <span class="logo-text">Task<span class="pilot">Pilot</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#get-started" class="btn btn-primary">Get Started →</a>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#get-started" class="btn btn-primary">Get Started →</a>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <div class="eyebrow">🚀 By Deific Digital</div>
-        <h1>Plan Today. <span class="accent">Achieve Tomorrow.</span></h1>
-        <p class="lead">Your daily productivity companion. Stay organized, build better habits, and achieve your goals — one day at a time.</p>
-        <ul class="checks">
-          <li><span class="tick">✓</span> Free to start</li>
-          <li><span class="tick">✓</span> No credit card</li>
-          <li><span class="tick">✓</span> Works offline</li>
-        </ul>
-        <div class="hero-cta">
-          <a href="#demo" class="btn btn-primary">Start Planning Free</a>
-          <div class="watch">
-            <div class="playbtn">▶</div>
-            <div>
-              <div>Watch 1-min tour</div>
-              <div class="sub">See how it works</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-blob"></div>
-        <div class="scene">
-          <div class="tag-note">Plan your day effortlessly ✨</div>
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="phone-status">
-                <span>9:41</span>
-                <span>🔋</span>
-              </div>
-              <div class="phone-topbar">
-                <span>📋</span> TaskPilot
-              </div>
-              <div class="phone-body">
-                <div class="greet">Good morning, Alex <span class="wave">👋</span></div>
-                <div class="greet-sub">You have 3 tasks due today</div>
-                <div class="progress-card">
-                  <div class="row"><span>Daily Progress</span><span>67%</span></div>
-                  <div class="progress-bar"><span></span></div>
-                </div>
-                <div class="day-label">TODAY'S FOCUS</div>
-                <div class="task-item">
-                  <div class="task-left">
-                    <div class="task-check">✓</div>
-                    <div>
-                      <div class="task-name">Review quarterly metrics</div>
-                      <div class="task-time">09:00 AM</div>
-                    </div>
-                  </div>
-                  <span class="badge high">High</span>
-                </div>
-                <div class="task-item">
-                  <div class="task-left">
-                    <div class="task-check">✓</div>
-                    <div>
-                      <div class="task-name">Design landing page update</div>
-                      <div class="task-time">11:30 AM</div>
-                    </div>
-                  </div>
-                  <span class="badge medium">Medium</span>
-                </div>
-                <div class="task-item">
-                  <div class="task-left">
-                    <div class="task-check" style="background:var(--line); color:var(--ink-soft);">○</div>
-                    <div>
-                      <div class="task-name" style="color:var(--ink-soft); text-decoration:line-through;">Team sync meeting</div>
-                      <div class="task-time">02:00 PM</div>
-                    </div>
-                  </div>
-                  <span class="badge normal">Done</span>
-                </div>
-                <div class="add-task-btn">+ Add New Task</div>
-              </div>
-              <div class="phone-nav">
-                <div class="active"><span>🏠</span>Home</div>
-                <div><span>📅</span>Schedule</div>
-                <div><span>📊</span>Habits</div>
-                <div><span>⚙️</span>Settings</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Section -->
-  <section id="features" class="why">
-    <div class="wrap">
-      <div class="section-eyebrow">WHY TASKPILOT</div>
-      <h2>Designed for Clarity & Focus</h2>
-      <p class="sub">Everything you need to master your schedule without the overwhelming clutter of traditional project management tools.</p>
-      <div class="feature-grid">
-        <div class="feature reveal">
-          <div class="icon">⚡</div>
-          <h3>Lightning Fast</h3>
-          <p>Instant load times and keyboard shortcuts for rapid entry.</p>
-        </div>
-        <div class="feature reveal reveal-delay-1">
-          <div class="icon">🛡️</div>
-          <h3>Private & Secure</h3>
-          <p>Your tasks stay local on your device with complete encryption.</p>
-        </div>
-        <div class="feature reveal reveal-delay-2">
-          <div class="icon">🔄</div>
-          <h3>Smart Sync</h3>
-          <p>Seamless background syncing across all your active devices.</p>
-        </div>
-        <div class="feature reveal reveal-delay-3">
-          <div class="icon">🎯</div>
-          <h3>Goal Tracking</h3>
-          <p>Break down massive yearly targets into daily actionable steps.</p>
-        </div>
-        <div class="feature reveal reveal-delay-4">
-          <div class="icon">🌙</div>
-          <h3>Focus Mode</h3>
-          <p>Distraction-free interface designed for deep work blocks.</p>
-        </div>
-        <div class="feature reveal reveal-delay-5">
-          <div class="icon">📈</div>
-          <h3>Habit Analytics</h3>
-          <p>Visual streaks and performance metrics to keep you motivated.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works Section -->
-  <section id="how" class="how">
-    <div class="wrap">
-      <div>
-        <div class="tag">SIMPLICITY FIRST</div>
-        <h2>Built to match how your brain actually works</h2>
-        <p class="desc">No steep learning curves. TaskPilot gets out of your way so you can focus entirely on executing your work.</p>
-        <ul class="how-list">
-          <li><span class="tick">✓</span> Brain dump tasks in under 5 seconds</li>
-          <li><span class="tick">✓</span> Automatically prioritize using the Eisenhower matrix</li>
-          <li><span class="tick">✓</span> Review daily highlights with evening wrap-ups</li>
-        </ul>
-        <div class="goal-note">"Simplicity is the ultimate sophistication."</div>
-      </div>
-      <div class="mock-row">
-        <div class="mock-card">
-          <div class="mtop"><span>1. Capture</span><span>⏱ 5s</span></div>
-          <div class="mock-hero-img" style="display:flex;align-items:center;justify-content:center;color:var(--green-900);font-weight:800;font-size:24px;">💡</div>
-          <h4>Quick Add</h4>
-          <p class="muted">Type thoughts instantly before you forget them.</p>
-          <div class="mock-btn">Type task...</div>
-          <div class="mock-link">Press Enter ↵</div>
-        </div>
-        <div class="mock-card" style="transform:translateY(15px);">
-          <div class="mtop"><span>2. Prioritize</span><span>🎯 Focus</span></div>
-          <div class="field-label">Task Priority</div>
-          <div class="priority-row">
-            <span class="high">High</span>
-            <span class="medium">Medium</span>
-            <span class="normal">Low</span>
-          </div>
-          <div class="mock-field">Schedule for optimal energy block</div>
-          <div class="mock-save">Save Priority</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Live Demo Interactive Section -->
-  <section id="demo" class="demo">
-    <div class="wrap">
-      <div style="text-align:center;">
-        <div class="section-eyebrow">INTERACTIVE PREVIEW</div>
-        <h2>Try TaskPilot Right Here</h2>
-        <p class="sub">Add a few tasks to test how smooth your daily organization can feel.</p>
-      </div>
-      <div class="demo-card">
-        <div class="demo-header">
-          <h4>My Today List</h4>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <span class="demo-limit-label" id="limitLabel">3 / 3 free tasks used</span>
-            <button class="demo-streak" id="streakBtn">🔥 1 Day Streak</button>
-          </div>
-        </div>
-        <div class="demo-list" id="demoList">
-          <!-- Populated by JS or default items -->
-          <div class="demo-item"><div class="task-check">✓</div> Finish project proposal</div>
-          <div class="demo-item"><div class="task-check">✓</div> Morning workout routine</div>
-          <div class="demo-item"><div class="task-check">✓</div> Call client for feedback</div>
-        </div>
-        <div class="demo-input-row" id="inputRow">
-          <input type="text" id="demoInput" placeholder="Type a task and press Enter..." maxlength="40">
-          <button class="btn btn-primary" id="demoAddBtn">Add Task</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section id="pricing" class="pricing">
-    <div class="wrap">
-      <div class="section-eyebrow">SIMPLE PRICING</div>
-      <h2>Invest in Your Productivity</h2>
-      <p class="sub">Choose the plan that fits your workflow best. Upgrade or cancel anytime.</p>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="price-plan">Starter</div>
-          <div class="price-amount">$0 <span>/ forever</span></div>
-          <div class="price-desc">Essential tools for personal daily task tracking.</div>
-          <ul class="price-features">
-            <li><span class="tick">✓</span> Up to 50 active tasks</li>
-            <li><span class="tick">✓</span> Local offline storage</li>
-            <li><span class="tick">✓</span> Basic habit streaks</li>
-          </ul>
-          <a href="#demo" class="btn btn-outline">Get Started Free</a>
-        </div>
-        <div class="price-card featured">
-          <div class="price-badge">POPULAR</div>
-          <div class="price-plan">Pro Pilot</div>
-          <div class="price-amount">$9 <span>/ month</span></div>
-          <div class="price-desc">Advanced utilities for maximum professional output.</div>
-          <ul class="price-features">
-            <li><span class="tick">✓</span> Unlimited tasks & projects</li>
-            <li><span class="tick">✓</span> Cross-device cloud sync</li>
-            <li><span class="tick">✓</span> Advanced analytics & exports</li>
-            <li><span class="tick">✓</span> Priority support 24/7</li>
-          </ul>
-          <a href="#demo" class="btn btn-white btn-primary" style="background:#fff; color:var(--green-900);">Upgrade to Pro</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="impact">
-    <div class="wrap">
-      <div class="impact-top">
-        <div>
-          <div class="tag">SUCCESS STORIES</div>
-          <h2>Trusted by thousands of focused achievers</h2>
-          <p>See how TaskPilot helps professionals reclaim control over their busy schedules.</p>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <div class="icon">⭐</div>
-            <div class="num">4.9/5</div>
-            <div class="label">User Rating</div>
-          </div>
-          <div class="stat">
-            <div class="icon">🚀</div>
-            <div class="num">25k+</div>
-            <div class="label">Active Users</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonials">
-        <div class="t-card">
-          <div class="t-head">
-            <div class="avatar" style="background:var(--green-700);">JS</div>
-            <div>
-              <h4>Jessica Sterling</h4>
-              <span>Product Manager</span>
-            </div>
-          </div>
-          <p>"TaskPilot completely changed how I start my mornings. The clean interface removes all distraction."</p>
-          <div class="stars">★★★★★</div>
-        </div>
-        <div class="t-card">
-          <div class="t-head">
-            <div class="avatar" style="background:var(--yellow-dark);">MR</div>
-            <div>
-              <h4>Marcus Reynolds</h4>
-              <span>Software Engineer</span>
-            </div>
-          </div>
-          <p>"Lightning fast and works completely offline. Exactly what I wanted out of a lightweight tracker."</p>
-          <div class="stars">★★★★★</div>
-        </div>
-        <div class="t-card">
-          <div class="t-head">
-            <div class="avatar" style="background:var(--green-900);">AL</div>
-            <div>
-              <h4>Aisha Lin</h4>
-              <span>Freelance Designer</span>
-            </div>
-          </div>
-          <p>"The habit tracking and daily focus routines helped me double my output without burning out."</p>
-          <div class="stars">★★★★★</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="faq">
-    <div class="wrap">
-      <div style="text-align:center;">
-        <div class="section-eyebrow">GOT QUESTIONS?</div>
-        <h2>Frequently Asked Questions</h2>
-        <p class="sub">Everything you need to know about the product and billing.</p>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            Is TaskPilot really free to use?
-            <span class="icon-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes! Our Starter plan is completely free forever with no credit card required, giving you access to core task planning features.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Does it work without an internet connection?
-            <span class="icon-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Absolutely. TaskPilot stores your data locally so you can manage tasks seamlessly anywhere, even on flights or offline environments.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Can I upgrade or cancel my subscription anytime?
-            <span class="icon-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Yes, you can upgrade, downgrade, or cancel your Pro subscription directly from your settings dashboard with zero hassle.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section Banner -->
-  <section class="cta-section">
-    <div class="cta-left">
-      <span>✦ No credit card required</span><br>
-      <span>✦ Set up in under 30 seconds</span>
-    </div>
-    <div class="cta-center">
-      <h2>Ready to take control of your day?</h2>
-      <p>Join thousands of professionals building better habits with TaskPilot.</p>
-      <a href="#demo" class="btn btn-primary">Get Started For Free</a>
-    </div>
-    <div class="cta-right">
-      <span>⚡ Instant setup</span><br>
-      <span>🔒 Secure & Private</span>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <a href="#" class="logo" style="margin-bottom:8px; display:inline-flex;">
-            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M2 12L22 2L14 22L11 13L2 12Z" fill="#1c7a4e"/></svg>
-            Task<span class="pilot">Pilot</span>
-          </a>
-          <p>Plan today, achieve tomorrow.</p>
-          <div class="deific-brand">
-            <div style="font-size:12px; font-weight:600; color:var(--ink-soft);">A product by Deific Digital</div>
-          </div>
-        </div>
-        <div class="footer-links">
-          <a href="#features">Features</a>
-          <a href="#how">How it Works</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <div class="footer-social">
-          <a href="#">in</a>
-          <a href="#">𝕏</a>
-          <a href="#">git</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>© 2026 Deific Digital (Deific Enterprises). All rights reserved.</div>
-        <div class="flinks">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop">↑</button>
-
-  <!-- Paywall Modal Overlay -->
-  <div class="modal-overlay" id="paywallModal">
-    <div class="modal-card">
-      <button class="modal-close" id="modalClose">✕</button>
-      <div class="modal-icon">⭐</div>
-      <h3>Unlock Unlimited Tasks</h3>
-      <div class="modal-sub">You've reached the free demo limit. Upgrade to Pro Pilot for infinite task management.</div>
-      <div class="modal-price">$9 <span>/ month</span></div>
-      <ul class="modal-features">
-        <li><span class="tick">✓</span> Unlimited active tasks</li>
-        <li><span class="tick">✓</span> Cloud sync across devices</li>
-        <li><span class="tick">✓</span> Advanced productivity metrics</li>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">⚡ Your Daily Productivity Companion</span>
+      <h1>Plan Today.<br><span class="accent">Achieve Tomorrow.</span></h1>
+      <p class="lead">TaskPilot helps you plan, remember and complete your daily tasks. Stay organized, build better habits and achieve your goals — one day at a time.</p>
+      <ul class="checks">
+        <li><span class="tick">✓</span> Free to start</li>
+        <li><span class="tick">✓</span> No credit card required</li>
+        <li><span class="tick">✓</span> Works offline</li>
       </ul>
-      <a href="#pricing" class="btn btn-primary" id="upgradeModalBtn">Upgrade to Pro Now</a>
-      <button class="modal-later" id="modalLater">Maybe later</button>
+      <div class="hero-cta">
+        <a href="#get-started" class="btn btn-primary">Get Started Free →</a>
+        <div class="watch">
+          <span class="playbtn">▶</span>
+          <div>
+            Watch Video
+            <div class="sub">See how TaskPilot works</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <div class="tag-note">Better Habits<br>Bigger Goals</div>
+      <div class="scene">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+            <div class="phone-topbar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 12L22 2L14 22L11 13L2 12Z" fill="#1c7a4e"/></svg>
+              <span>Task<span style="color:#e8a520">Pilot</span></span>
+            </div>
+            <div class="phone-body">
+              <div class="greet">Good Morning, Rohan! <span class="wave">👋</span></div>
+              <div class="greet-sub">Small steps make big progress.</div>
+              <div class="progress-card">
+                <div class="row"><span>Today's Progress</span><span>67%</span></div>
+                <div style="font-size:10px;color:var(--ink-soft);margin-bottom:6px;">2 / 3 tasks completed</div>
+                <div class="progress-bar"><span></span></div>
+              </div>
+              <div class="day-label">Today, 09 Sep</div>
+              <div class="task-item">
+                <div class="task-left">
+                  <span class="task-check">✓</span>
+                  <div>
+                    <div class="task-name">Client meeting</div>
+                    <div class="task-time">10:00 AM</div>
+                  </div>
+                </div>
+                <span class="badge medium">Medium</span>
+              </div>
+              <div class="task-item">
+                <div class="task-left">
+                  <span class="task-check">✓</span>
+                  <div>
+                    <div class="task-name">Report submission</div>
+                    <div class="task-time">2:00 PM</div>
+                  </div>
+                </div>
+                <span class="badge high">High</span>
+              </div>
+              <div class="task-item">
+                <div class="task-left">
+                  <span class="task-check">✓</span>
+                  <div>
+                    <div class="task-name">Team sync</div>
+                    <div class="task-time">5:00 PM</div>
+                  </div>
+                </div>
+                <span class="badge normal">Normal</span>
+              </div>
+              <div class="add-task-btn">+ Add New Task</div>
+              <div class="phone-nav">
+                <div class="active"><span>📅</span>Today</div>
+                <div><span>➕</span>New Task</div>
+                <div><span>🕐</span>Evening Check</div>
+                <div><span>📈</span>Progress</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <svg class="person" viewBox="0 0 200 260" fill="none">
+          <ellipse cx="100" cy="250" rx="90" ry="10" fill="#d9d0b8" opacity="0.4"/>
+          <rect x="30" y="150" width="70" height="90" rx="14" fill="#2b2f36"/>
+          <circle cx="100" cy="90" r="34" fill="#3a2a1d"/>
+          <circle cx="100" cy="96" r="26" fill="#e8b98a"/>
+          <path d="M74 84c0-20 52-20 52 0v6H74z" fill="#1a1410"/>
+          <rect x="55" y="120" width="90" height="70" rx="20" fill="#1c7a4e"/>
+          <rect x="55" y="120" width="90" height="20" rx="10" fill="#e8a520"/>
+          <rect x="60" y="185" width="80" height="60" rx="12" fill="#152a22"/>
+          <circle cx="112" cy="130" r="10" fill="#e8b98a"/>
+        </svg>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- Interactive Demo Script -->
-  <script>
-    // FAQ Toggle functionality
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        const wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-      });
-    });
+<section class="why" id="features">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">WHY TASKPILOT</div>
+    <h2 class="reveal">Everything you need to stay on track</h2>
+    <p class="sub reveal">Simple. Smart. Powerful. TaskPilot gives you the tools to be your best self.</p>
+    <div class="feature-grid">
+      <div class="feature reveal reveal-delay-1">
+        <div class="icon">📅</div>
+        <h3>Smart Reminders</h3>
+        <p>Never miss important tasks again.</p>
+      </div>
+      <div class="feature reveal reveal-delay-2">
+        <div class="icon">✅</div>
+        <h3>Task Management</h3>
+        <p>Add, edit and organize your daily work.</p>
+      </div>
+      <div class="feature reveal reveal-delay-3">
+        <div class="icon">📈</div>
+        <h3>Track Progress</h3>
+        <p>See your growth and build consistency.</p>
+      </div>
+      <div class="feature reveal reveal-delay-4">
+        <div class="icon">🌐</div>
+        <h3>Multiple Languages</h3>
+        <p>Use in your preferred language.</p>
+      </div>
+      <div class="feature reveal reveal-delay-5">
+        <div class="icon">👑</div>
+        <h3>Premium Features</h3>
+        <p>Unlock more with TaskPilot Pro.</p>
+      </div>
+      <div class="feature reveal reveal-delay-6">
+        <div class="icon">🔒</div>
+        <h3>Secure &amp; Private</h3>
+        <p>Your data is safe with us.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Mobile menu toggle
-    const burger = document.querySelector('.burger');
-    // Simple scroll header effect
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="how-copy reveal">
+      <span class="tag">HOW IT WORKS</span>
+      <h2>Simple Steps.<br>Big Results.</h2>
+      <p class="desc">TaskPilot makes productivity easy with a clean interface, smart features and a focus on what really matters.</p>
+      <ul class="how-list">
+        <li><span class="tick">✓</span> Plan your tasks</li>
+        <li><span class="tick">✓</span> Get timely reminders</li>
+        <li><span class="tick">✓</span> Track your progress</li>
+        <li><span class="tick">✓</span> Build better habits</li>
+      </ul>
+      <div class="goal-note">Your Goals<br>Our Priority ↘</div>
+    </div>
 
-      // Scroll progress bar indicator
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.querySelector('.scroll-progress').style.width = scrolled + '%';
+    <div class="mock-row">
+      <div class="mock-card reveal reveal-delay-1">
+        <div class="mtop"><span>Task<span style="color:#e8a520">Pilot</span></span></div>
+        <div class="mock-hero-img"></div>
+        <h4>Welcome Back</h4>
+        <div class="muted">Let's get productive!</div>
+        <div class="mock-btn">Login</div>
+        <div class="mock-link">Don't have an account? Sign Up</div>
+      </div>
+      <div class="mock-card reveal reveal-delay-2">
+        <div class="mtop"><span>← Add New Task</span></div>
+        <div class="field-label">Task Name</div>
+        <div class="mock-field">Enter task name</div>
+        <div class="field-label">Description (optional)</div>
+        <div class="mock-field">Add description</div>
+        <div class="field-label">Date</div>
+        <div class="mock-field">📅 09 Sep 2026</div>
+        <div class="field-label">Time</div>
+        <div class="mock-field">🕐 10:00 AM</div>
+        <div class="field-label">Priority</div>
+        <div class="priority-row">
+          <span class="high">High</span><span class="medium">Medium</span><span class="normal">Normal</span>
+        </div>
+        <div class="field-label">Reminder</div>
+        <div class="mock-field">30 min before</div>
+        <div class="mock-save">Save Task</div>
+      </div>
+      <div class="mock-card reveal reveal-delay-3">
+        <div class="mtop"><span>← Evening Check</span></div>
+        <div class="muted" style="margin-bottom:6px;">How was your day?</div>
+        <div class="ring-wrap">
+          <div class="ring"><div class="ring-inner">2/3<span>Tasks done</span></div></div>
+        </div>
+        <div class="evening-item"><span class="dot">✓</span><div><h5>Client meeting</h5><p>Completed</p></div></div>
+        <div class="evening-item"><span class="dot">✓</span><div><h5>Report submission</h5><p>Completed</p></div></div>
+        <div class="evening-item"><span class="dot empty">•</span><div><h5>Team sync</h5><p>Continue tomorrow</p></div></div>
+        <div class="note-box">🌟 Great job! Keep it up! You're making progress.</div>
+        <div class="mock-save" style="background:var(--green-700);">View Tomorrow's Tasks →</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      // Back to top button visibility
-      const btt = document.getElementById('backToTop');
-      if (window.scrollY > 400) {
-        btt.classList.add('show');
-      } else {
-        btt.classList.remove('show');
-      }
-    });
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" style="text-align:center;">LIVE DEMO</div>
+    <h2 class="reveal" style="text-align:center;">Try the free plan</h2>
+    <p class="sub reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Add reminders below — free accounts get 3 per day. Streak tracking unlocks with Premium.</p>
+    <div class="demo-card reveal reveal-delay-1">
+      <div class="demo-header">
+        <div>
+          <h4>Today's Reminders</h4>
+          <span class="demo-limit-label" id="demoLimitLabel">0 / 3 free reminders used today</span>
+        </div>
+        <button class="demo-streak" id="demoStreakBadge">🔒 Streak tracking — Premium</button>
+      </div>
+      <div class="demo-list" id="demoList">
+        <div class="demo-empty" id="demoEmpty">No reminders yet — add your first one below.</div>
+      </div>
+      <div class="demo-input-row">
+        <input type="text" id="demoInput" placeholder="e.g. Drink water at 4 PM" maxlength="40">
+        <button class="btn btn-primary" id="demoAddBtn">+ Add Reminder</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-    document.getElementById('backToTop').addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-eyebrow reveal">PRICING</div>
+    <h2 class="reveal">Simple plans for every stage</h2>
+    <p class="sub reveal">Start free, upgrade when you're ready for more.</p>
+    <div class="pricing-grid">
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-plan">Free</div>
+        <div class="price-amount">₹0 <span>/ forever</span></div>
+        <div class="price-desc">Everything you need to get started with daily planning.</div>
+        <ul class="price-features">
+          <li><span class="tick">✓</span> 3 reminders per day</li>
+          <li><span class="tick">✓</span> Basic task management</li>
+          <li><span class="tick">✓</span> Progress tracking</li>
+          <li><span class="tick">✓</span> Works offline</li>
+        </ul>
+        <a href="#get-started" class="btn btn-outline">Get Started Free</a>
+      </div>
+      <div class="price-card featured reveal reveal-delay-2">
+        <span class="price-badge">Most Popular</span>
+        <div class="price-plan">Premium</div>
+        <div class="price-amount">₹399 <span>/ month</span></div>
+        <div class="price-desc">For people who want unlimited planning power.</div>
+        <ul class="price-features">
+          <li><span class="tick">✓</span> Unlimited reminders</li>
+          <li><span class="tick">✓</span> Streak tracking</li>
+          <li><span class="tick">✓</span> Advanced progress insights</li>
+          <li><span class="tick">✓</span> Multiple languages</li>
+          <li><span class="tick">✓</span> Priority support</li>
+        </ul>
+        <a href="#" class="btn btn-white" id="pricingPremiumBtn">Upgrade to Premium</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Live demo logic with limit & modal trigger
-    let taskCount = 3;
-    const maxFreeTasks = 5;
-    const demoList = document.getElementById('demoList');
-    const demoInput = document.getElementById('demoInput');
-    const demoAddBtn = document.getElementById('demoAddBtn');
-    const limitLabel = document.getElementById('limitLabel');
-    const paywallModal = document.getElementById('paywallModal');
+<section class="download" id="download">
+  <div class="download-copy reveal">
+    <span class="section-eyebrow" style="text-align:left;">GET THE APP</span>
+    <h2>Take TaskPilot with you, everywhere</h2>
+    <p>Download the app and start planning your day in seconds. Available on iOS and Android, and it works offline too.</p>
+    <div class="store-badges">
+      <a href="#" class="store-btn">
+        <span class="glyph">🍎</span>
+        <span class="store-text"><small>Download on the</small><strong>App Store</strong></span>
+      </a>
+      <a href="#" class="store-btn">
+        <span class="glyph">▶</span>
+        <span class="store-text"><small>Get it on</small><strong>Google Play</strong></span>
+      </a>
+    </div>
+  </div>
+  <div class="download-visual reveal reveal-delay-1">
+    <div class="qr-card">
+      <div class="qr-box"></div>
+      <p>Scan to download TaskPilot</p>
+    </div>
+  </div>
+</section>
 
-    function updateLimitDisplay() {
-      limitLabel.textContent = `${taskCount} / ${maxFreeTasks} free tasks used`;
-      if (taskCount >= maxFreeTasks) {
-        limitLabel.classList.add('limit-reached');
-        demoAddBtn.textContent = 'Unlock Pro';
-        demoAddBtn.classList.add('limit-reached');
-      }
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" style="text-align:center;">FAQ</div>
+    <h2 class="reveal" style="text-align:center;">Frequently asked questions</h2>
+    <p class="sub reveal" style="text-align:center;">Everything you need to know before you get started.</p>
+    <div class="faq-list">
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question">
+          Is TaskPilot really free to use?
+          <span class="icon-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes. The Free plan gives you up to 10 tasks a day, reminders, and progress tracking with no credit card required. You can upgrade to Pro anytime for unlimited tasks and extra features.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question">
+          Does TaskPilot work without an internet connection?
+          <span class="icon-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes. TaskPilot is designed to work offline, so you can plan and check off tasks even without a connection. Everything syncs automatically once you're back online.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-question">
+          What is streak tracking?
+          <span class="icon-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Streak tracking shows how many days in a row you've completed your reminders, helping you build consistent habits over time. It's a Premium feature available for ₹399/month.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <button class="faq-question">
+          Is my data safe and private?
+          <span class="icon-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes. Your tasks and personal data are encrypted and never sold or shared with third parties. You're always in control of your information.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-5">
+        <button class="faq-question">
+          Can I cancel my Pro subscription anytime?
+          <span class="icon-toggle">+</span>
+        </button>
+        <div class="faq-answer"><p>Absolutely. You can cancel your Premium subscription at any time from your account settings, no questions asked, and you'll keep access until the end of your billing period.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact">
+  <div class="wrap">
+    <div class="impact-top">
+      <div class="reveal">
+        <span class="tag">REAL IMPACT</span>
+        <h2>Real People. Real Progress.</h2>
+        <p>Join thousands of people who are building better habits with TaskPilot.</p>
+      </div>
+      <div class="stats reveal reveal-delay-1">
+        <div class="stat">
+          <div class="icon">👥</div>
+          <div class="num" data-count="50" data-suffix="K+">0</div>
+          <div class="label">Active Users</div>
+        </div>
+        <div class="stat">
+          <div class="icon">⭐</div>
+          <div class="num" data-count="4.8" data-suffix="★" data-decimal="1">0</div>
+          <div class="label">App Rating</div>
+        </div>
+        <div class="stat">
+          <div class="icon">✅</div>
+          <div class="num" data-count="1" data-suffix="M+">0</div>
+          <div class="label">Tasks Completed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <div class="t-card reveal reveal-delay-1">
+        <div class="t-head">
+          <div class="avatar" style="background:#1c7a4e;">RS</div>
+          <div>
+            <h4>Rohan Sharma</h4>
+            <span>Freelancer</span>
+          </div>
+        </div>
+        <p>"TaskPilot has completely changed how I manage my day. Simple, clean and super effective!"</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="t-card reveal reveal-delay-2">
+        <div class="t-head">
+          <div class="avatar" style="background:#e8a520;">PV</div>
+          <div>
+            <h4>Pooja Verma</h4>
+            <span>Student</span>
+          </div>
+        </div>
+        <p>"The reminders are a lifesaver! I'm more productive and less stressed now."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="t-card reveal reveal-delay-3">
+        <div class="t-head">
+          <div class="avatar" style="background:#155c3f;">AK</div>
+          <div>
+            <h4>Amit Kumar</h4>
+            <span>Business Owner</span>
+          </div>
+        </div>
+        <p>"Great app with amazing features. It keeps me on track and helps me reach my goals."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section reveal" id="get-started">
+  <div class="cta-left">
+    <span>✓</span> Your Productivity Partner
+  </div>
+  <div class="cta-center">
+    <h2>Ready to take control of your day?</h2>
+    <p>Join TaskPilot today and start your journey to a better you.</p>
+    <a href="#" class="btn btn-primary">Get Started Free →</a>
+  </div>
+  <div class="cta-right">
+    <div><span>✓</span>Plan</div>
+    <div><span>✓</span>Focus</div>
+    <div><span>✓</span>Achieve</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2 12L22 2L14 22L11 13L2 12Z" fill="#1c7a4e"/></svg>
+          <span class="logo-text">Task<span class="pilot">Pilot</span></span>
+        </a>
+        <p>Plan Today. Achieve Tomorrow.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#help">Help</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="X">✕</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TaskPilot. All rights reserved.</span>
+      <div class="flinks">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Support</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<div class="modal-overlay" id="paywallModal">
+  <div class="modal-card">
+    <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
+    <div class="modal-icon">🔒</div>
+    <h3>You've used your 3 free reminders today</h3>
+    <p class="modal-sub">Upgrade to Premium for unlimited reminders and streak tracking to help you build lasting habits.</p>
+    <div class="modal-price">₹399 <span>/ month</span></div>
+    <ul class="modal-features">
+      <li><span class="tick">✓</span> Unlimited reminders every day</li>
+      <li><span class="tick">✓</span> Streak tracking &amp; habit insights</li>
+      <li><span class="tick">✓</span> Advanced progress reports</li>
+      <li><span class="tick">✓</span> Priority support</li>
+    </ul>
+    <a href="#pricing" class="btn btn-primary" id="modalUpgradeBtn">Upgrade to Premium</a>
+    <button class="modal-later" id="modalLaterBtn">Maybe later</button>
+  </div>
+</div>
+
+
+<script>
+  // Header shadow + scroll progress bar
+  const header = document.getElementById('siteHeader');
+  const progressBar = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+
+  function onScroll(){
+    const scrollY = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+
+    if(scrollY > 20){
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
 
+    if(scrollY > 500){
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+
+  // Mobile menu toggle
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burgerBtn.textContent = isOpen ? '✕' : '☰';
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burgerBtn.textContent = '☰';
+      burgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Highlight active nav link based on section in view
+  const sections = ['home','features','how','demo','pricing','download','faq','get-started'].map(id => document.getElementById(id)).filter(Boolean);
+  const navAnchors = document.querySelectorAll('.nav-links a, .mobile-menu a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = entry.target.id;
+        navAnchors.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  sections.forEach(sec => navObserver.observe(sec));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if(openItem !== item) openItem.classList.remove('open');
+      });
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Free / Premium reminder demo logic
+  const FREE_REMINDER_LIMIT = 3;
+  let remindersUsedToday = 0;
+
+  const demoInput = document.getElementById('demoInput');
+  const demoAddBtn = document.getElementById('demoAddBtn');
+  const demoList = document.getElementById('demoList');
+  const demoEmpty = document.getElementById('demoEmpty');
+  const demoLimitLabel = document.getElementById('demoLimitLabel');
+  const demoStreakBadge = document.getElementById('demoStreakBadge');
+  const paywallModal = document.getElementById('paywallModal');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalLaterBtn = document.getElementById('modalLaterBtn');
+  const modalUpgradeBtn = document.getElementById('modalUpgradeBtn');
+  const pricingPremiumBtn = document.getElementById('pricingPremiumBtn');
+
+  function openPaywallModal(){
+    paywallModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePaywallModal(){
+    paywallModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function updateDemoLimitLabel(){
+    const remaining = FREE_REMINDER_LIMIT - remindersUsedToday;
+    if(remaining > 0){
+      demoLimitLabel.textContent = remindersUsedToday + ' / ' + FREE_REMINDER_LIMIT + ' free reminders used today';
+      demoLimitLabel.classList.remove('limit-reached');
+      demoAddBtn.textContent = '+ Add Reminder';
+      demoAddBtn.classList.remove('limit-reached');
+    } else {
+      demoLimitLabel.textContent = 'Free limit reached — 3 / 3 reminders used today';
+      demoLimitLabel.classList.add('limit-reached');
+      demoAddBtn.textContent = '🔒 Upgrade to add more';
+      demoAddBtn.classList.add('limit-reached');
+    }
+  }
+
+  function addDemoReminder(text){
+    if(demoEmpty) demoEmpty.remove();
+    const item = document.createElement('div');
+    item.className = 'demo-item';
+    item.innerHTML = '<span class="task-check">✓</span><span></span>';
+    item.querySelector('span:last-child').textContent = text;
+    demoList.appendChild(item);
+  }
+
+  if(demoAddBtn){
     demoAddBtn.addEventListener('click', () => {
-      if (taskCount >= maxFreeTasks) {
-        paywallModal.classList.add('open');
+      if(remindersUsedToday >= FREE_REMINDER_LIMIT){
+        openPaywallModal();
         return;
       }
-      const text = demoInput.value.trim();
-      if (!text) return;
-
-      taskCount++;
-      const newItem = document.createElement('div');
-      newItem.className = 'demo-item';
-      newItem.innerHTML = `<div class="task-check">✓</div> ${text}`;
-      demoList.appendChild(newItem);
+      const value = demoInput.value.trim();
+      if(!value){
+        demoInput.focus();
+        return;
+      }
+      addDemoReminder(value);
+      remindersUsedToday++;
+      updateDemoLimitLabel();
       demoInput.value = '';
-      updateLimitDisplay();
+      demoInput.focus();
     });
 
-    demoInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        demoAddBtn.click();
+    demoInput.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter') demoAddBtn.click();
+    });
+  }
+
+  if(demoStreakBadge){
+    demoStreakBadge.addEventListener('click', openPaywallModal);
+  }
+  if(pricingPremiumBtn){
+    pricingPremiumBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPaywallModal();
+    });
+  }
+  if(modalCloseBtn) modalCloseBtn.addEventListener('click', closePaywallModal);
+  if(modalLaterBtn) modalLaterBtn.addEventListener('click', closePaywallModal);
+  if(paywallModal){
+    paywallModal.addEventListener('click', (e) => {
+      if(e.target === paywallModal) closePaywallModal();
+    });
+  }
+  if(modalUpgradeBtn){
+    modalUpgradeBtn.addEventListener('click', () => {
+      closePaywallModal();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && paywallModal.classList.contains('open')) closePaywallModal();
+  });
+
+  updateDemoLimitLabel();
+
+  // Scroll reveal animation
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
       }
     });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
 
-    document.getElementById('modalClose').addEventListener('click', () => {
-      paywallModal.classList.remove('open');
-    });
-    document.getElementById('modalLater').addEventListener('click', () => {
-      paywallModal.classList.remove('open');
-    });
-    document.getElementById('upgradeModalBtn').addEventListener('click', () => {
-      paywallModal.classList.remove('open');
-    });
+  // Animated stat counters
+  const counters = document.querySelectorAll('.num[data-count]');
+  function animateCounter(el){
+    const target = parseFloat(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+    const duration = 1400;
+    const startTime = performance.now();
 
-    // Scroll reveal observation fallback
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
+    function tick(now){
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = target * eased;
+      el.textContent = value.toFixed(decimals) + suffix;
+      if(progress < 1){
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target.toFixed(decimals) + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterObserver.observe(el));
+
+  // Smooth scroll for internal anchor links (fallback for older browsers)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      const targetId = this.getAttribute('href');
+      if(targetId.length > 1){
+        const targetEl = document.querySelector(targetId);
+        if(targetEl){
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      });
-    }, { threshold: 0.1 });
+      }
+    });
+  });
+</script>
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
