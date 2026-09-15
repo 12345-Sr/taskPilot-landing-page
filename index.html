@@ -1183,6 +1183,24 @@
   .footer-legal-note{margin-top:14px;font-size:11.5px;color:var(--ink-soft);max-width:360px;}
   .legal-link{background:none;border:0;padding:0;font:inherit;color:var(--green-700);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
 
+  /* ===== Support ===== */
+  .support-overlay{position:fixed;inset:0;background:rgba(15,42,34,.58);display:flex;align-items:center;justify-content:center;padding:18px;z-index:320;opacity:0;pointer-events:none;transition:opacity .25s ease;}
+  .support-overlay.open{opacity:1;pointer-events:auto;}
+  .support-card{background:#fff;width:min(520px,100%);border-radius:24px;box-shadow:0 30px 80px rgba(15,42,34,.30);transform:translateY(18px) scale(.98);transition:transform .3s ease;overflow:hidden;}
+  .support-overlay.open .support-card{transform:translateY(0) scale(1);}
+  .support-head{padding:24px 28px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:18px;}
+  .support-head h2{font-size:24px;font-weight:800;color:var(--green-900);margin:0;}
+  .support-head p{font-size:12px;color:var(--ink-soft);margin-top:5px;}
+  .support-close{width:36px;height:36px;border:0;border-radius:50%;background:var(--green-soft);color:var(--green-800);font-size:17px;cursor:pointer;flex-shrink:0;}
+  .support-body{padding:28px;}
+  .support-intro{background:var(--green-soft);border-radius:14px;padding:16px 18px;margin-bottom:20px;color:var(--green-900);font-size:13.5px;}
+  .support-contact{display:grid;gap:12px;}
+  .support-contact a,.support-contact .support-number{display:flex;align-items:center;gap:12px;padding:15px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;font-size:14px;font-weight:700;color:var(--green-900);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+  .support-contact a:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#cfe4d5;}
+  .support-contact .support-icon{width:36px;height:36px;border-radius:10px;background:var(--green-soft);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+  .support-contact small{display:block;font-size:11px;font-weight:500;color:var(--ink-soft);margin-top:2px;}
+  .support-note{font-size:11.5px;color:var(--ink-soft);margin-top:18px;}
+
   /* ===== Terms Modal ===== */
   .terms-overlay{position:fixed;inset:0;background:rgba(15,42,34,.58);display:flex;align-items:center;justify-content:center;padding:18px;z-index:300;opacity:0;pointer-events:none;transition:opacity .25s ease;}
   .terms-overlay.open{opacity:1;pointer-events:auto;}
@@ -1361,6 +1379,199 @@
     .nav > .btn-primary{display:none;}
     .nav{padding:14px 0;}
   }
+
+
+  /* ===== Enhanced responsive layout ===== */
+  @media (max-width: 980px){
+    .nav{padding:15px 0;}
+    .nav > .btn-primary{display:none;}
+    .nav-links{display:none;}
+    .burger{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;font-size:23px;border-radius:12px;}
+    .burger:hover{background:var(--green-soft);}
+
+    .hero{padding:48px 0 54px;}
+    .hero .wrap{grid-template-columns:1fr;gap:34px;}
+    .hero-copy{max-width:720px;margin:0 auto;text-align:center;}
+    .hero p.lead{margin-left:auto;margin-right:auto;}
+    .checks{justify-content:center;}
+    .hero-cta{justify-content:center;}
+    .hero-visual{width:100%;min-height:420px;margin:0 auto;max-width:720px;}
+    .hero-blob{inset:0 0 6px;}
+    .tag-note{right:5%;top:22px;}
+    .person{right:4%;width:205px;}
+    .phone{width:245px;}
+  }
+
+  @media (max-width: 768px){
+    .wrap{padding-left:22px;padding-right:22px;}
+    .hero{padding:36px 0 42px;}
+    .hero .wrap{gap:28px;}
+    .eyebrow{font-size:11.5px;padding:8px 13px;margin-bottom:18px;}
+    .hero h1{font-size:clamp(31px,8.5vw,42px);line-height:1.12;letter-spacing:-.6px;}
+    .hero h1 .accent::after{height:4px;bottom:1px;}
+    .hero p.lead{font-size:14.5px;line-height:1.7;max-width:600px;margin-top:15px;}
+    .checks{gap:10px 18px;font-size:12.5px;margin-top:19px;}
+    .checks li .tick{width:17px;height:17px;font-size:10px;}
+    .hero-cta{margin-top:23px;gap:14px;}
+    .hero-cta .btn-primary{padding:13px 22px;}
+    .watch{font-size:13px;}
+    .watch .playbtn{width:38px;height:38px;}
+
+    .hero-visual{min-height:390px;max-width:600px;}
+    .hero-blob{border-radius:26px;}
+    .tag-note{font-size:16px;top:16px;right:4%;}
+    .phone{width:285px;padding:11px;border-radius:32px;}
+    .phone-screen{border-radius:23px;padding-bottom:9px;}
+    .phone-status{font-size:11px;padding:10px 15px 4px;}
+    .phone-topbar{font-size:15px;padding:7px 15px 12px;}
+    .phone-body{padding:0 15px;}
+    .greet{font-size:15px;}
+    .greet-sub{font-size:11.5px;margin-bottom:12px;}
+    .progress-card{padding:11px 12px;}
+    .progress-card .row{font-size:11.5px;}
+    .task-item{font-size:11.5px;padding:9px 0;}
+    .person{width:175px;right:0;bottom:0;}
+
+    .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .feature{min-width:0;}
+    .how{margin:14px 12px 48px;padding:38px 22px;border-radius:22px;}
+    .how .wrap{padding:0;}
+    .how h2{text-align:center;font-size:27px;}
+    .how .tag{margin-bottom:15px;}
+    .how p.desc{text-align:center;font-size:14px;}
+    .how-list{max-width:290px;margin:0 auto;}
+    .goal-note{text-align:center;}
+    .mock-row{width:100%;}
+    .mock-card{width:min(100%,260px);}
+    .cta-section{margin-left:12px;margin-right:12px;}
+    .download{margin-left:12px;margin-right:12px;}
+  }
+
+  @media (max-width: 560px){
+    .wrap{padding-left:16px;padding-right:16px;}
+    header{z-index:200;}
+    .nav{padding:13px 0;}
+    .logo{font-size:20px;gap:6px;}
+    .logo svg{width:23px;height:23px;}
+    .burger{width:40px;height:40px;font-size:22px;}
+    .mobile-menu{padding:8px 16px 16px;max-height:calc(100vh - 66px);overflow:auto;}
+    .mobile-menu a{padding:11px 5px;font-size:14px;}
+    .mobile-menu .btn{padding:13px 20px;font-size:14px;}
+
+    .hero{padding:30px 0 36px;}
+    .hero .wrap{gap:24px;}
+    .eyebrow{max-width:100%;font-size:10.5px;padding:7px 11px;}
+    .hero h1{font-size:clamp(28px,9vw,36px);}
+    .hero p.lead{font-size:14px;line-height:1.65;padding:0 2px;}
+    .checks{flex-direction:column;align-items:center;gap:9px;font-size:12.5px;}
+    .hero-cta{flex-direction:column;align-items:stretch;gap:14px;margin-top:22px;}
+    .hero-cta .btn-primary{width:100%;justify-content:center;}
+    .watch{justify-content:center;}
+
+    .hero-visual{min-height:365px;max-width:420px;}
+    .hero-blob{border-radius:24px;}
+    .tag-note{font-size:14px;right:4%;top:11px;}
+    .phone{width:270px;padding:10px;border-radius:31px;}
+    .phone-screen{border-radius:22px;}
+    .phone-body{padding:0 13px;}
+    .greet{font-size:14px;}
+    .greet-sub{font-size:10.5px;}
+    .progress-card{padding:10px 11px;margin-bottom:10px;}
+    .day-label{font-size:10.5px;}
+    .task-item{font-size:10.5px;padding:8px 0;}
+    .task-check{width:15px;height:15px;font-size:8px;}
+    .task-left{gap:7px;}
+    .task-time{font-size:9.5px;}
+    .badge{font-size:8px;padding:3px 7px;}
+    .add-task-btn{font-size:10.5px;padding:9px 7px;}
+    .phone-nav{padding-top:9px;}
+    .phone-nav div{font-size:8px;}
+    .phone-nav div span{font-size:13px;}
+    .person{width:145px;right:-2px;}
+
+    .why{padding:58px 0 42px;}
+    .why h2,.how h2,.impact h2{font-size:25px;line-height:1.25;}
+    .why p.sub{font-size:13.5px;margin-bottom:34px;}
+    .feature-grid{grid-template-columns:1fr 1fr;gap:10px;}
+    .feature{padding:16px 8px;}
+    .feature .icon{width:46px;height:46px;font-size:18px;margin-bottom:10px;}
+    .feature h3{font-size:13px;line-height:1.3;}
+    .feature p{font-size:11.5px;line-height:1.5;}
+
+    .how{margin:10px 8px 42px;padding:34px 16px;border-radius:20px;}
+    .how h2{font-size:25px;}
+    .how p.desc{font-size:13px;line-height:1.65;}
+    .how-list li{font-size:13px;}
+    .mock-row{flex-direction:column;align-items:center;gap:14px;}
+    .mock-card{width:100%;max-width:280px;padding:13px;}
+
+    .pricing{padding:8px 0 48px;}
+    .price-card{padding:24px 19px;}
+    .price-amount{font-size:30px;}
+    .download{margin:10px 8px 42px;padding:34px 18px;border-radius:20px;}
+    .download h2{font-size:23px;}
+    .store-badges{flex-direction:column;align-items:stretch;}
+    .store-badge{width:100%;min-width:0;max-width:280px;margin:0 auto;}
+    .faq{padding:8px 0 48px;}
+    .faq-question{font-size:14px;padding:16px 0;}
+    .faq-answer p{font-size:13px;}
+    .demo{padding:8px 0 44px;}
+    .demo-card{padding:20px 15px;margin-top:28px;}
+    .modal-card{width:calc(100% - 24px);padding:25px 18px 22px;border-radius:20px;}
+    .modal-card h3{font-size:17px;}
+
+    .support-overlay{padding:10px;}
+    .support-card{border-radius:20px;max-height:92vh;overflow:auto;}
+    .support-head{padding:19px 18px 14px;}
+    .support-head h2{font-size:20px;}
+    .support-body{padding:18px;}
+    .support-intro{font-size:12.5px;padding:13px 14px;}
+    .support-contact a,.support-contact .support-number{padding:13px 12px;font-size:13px;}
+    .terms-overlay{padding:8px;}
+    .terms-card{border-radius:18px;max-height:94vh;}
+    .terms-head{padding:18px 16px 14px;}
+    .terms-head h2{font-size:19px;}
+    .terms-body{padding:18px 16px;}
+    .terms-body p,.terms-body li{font-size:12px;line-height:1.7;}
+    .terms-footer{padding:15px 16px;}
+
+    .footer-main{gap:20px;}
+    .footer-links{width:100%;}
+    .footer-bottom{gap:14px;}
+    .back-to-top{right:13px;bottom:13px;width:42px;height:42px;}
+  }
+
+  @media (max-width: 400px){
+    .hero h1{font-size:28px;}
+    .hero-visual{min-height:340px;}
+    .tag-note{display:none;}
+    .phone{width:250px;padding:9px;border-radius:29px;}
+    .phone-screen{border-radius:21px;}
+    .phone-topbar{font-size:13px;padding-bottom:10px;}
+    .greet{font-size:13px;}
+    .greet-sub{font-size:10px;}
+    .phone-body{padding:0 12px;}
+    .person{width:128px;right:-4px;}
+    .feature-grid{gap:8px;}
+    .feature{padding:14px 6px;}
+    .feature h3{font-size:12.5px;}
+    .feature p{font-size:10.8px;}
+    .btn{font-size:13.5px;}
+  }
+
+  @media (max-width: 340px){
+    .wrap{padding-left:13px;padding-right:13px;}
+    .hero h1{font-size:26px;}
+    .phone{width:230px;}
+    .person{width:115px;}
+    .checks{font-size:12px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  }
+
 </style>
 </head>
 <body>
@@ -1857,13 +2068,37 @@
       <div class="flinks">
         <a href="#" id="privacyFooterLink">Privacy Policy</a>
         <a href="#" id="termsFooterLink">Terms &amp; Conditions</a>
-        <a href="#help">Support</a>
+        <a href="#help" id="supportFooterLink">Support</a>
       </div>
     </div>
   </div>
 </footer>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+
+<div class="support-overlay" id="supportModal" role="dialog" aria-modal="true" aria-labelledby="supportTitle">
+  <div class="support-card">
+    <div class="support-head">
+      <div><h2 id="supportTitle">TaskPilot Support</h2><p>Deific Digital (Deific Enterprises)</p></div>
+      <button class="support-close" id="supportCloseBtn" aria-label="Close Support">✕</button>
+    </div>
+    <div class="support-body">
+      <div class="support-intro">Need help with TaskPilot, your account, tasks, Pro access, or anything else? Contact the Deific Digital support team.</div>
+      <div class="support-contact">
+        <a href="mailto:deific.solution@hotmail.com" aria-label="Email Deific Digital Support">
+          <span class="support-icon">✉</span>
+          <span>Email Support<small>deific.solution@hotmail.com</small></span>
+        </a>
+        <div class="support-number">
+          <span class="support-icon">☎</span>
+          <span>Phone Support<small>+91 XXXXXXXXXX — update this number when ready</small></span>
+        </div>
+      </div>
+      <p class="support-note">For account or payment-related requests, please include the email address associated with your TaskPilot account.</p>
+    </div>
+  </div>
+</div>
 
 <div class="terms-overlay" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
   <div class="terms-card">
@@ -2031,6 +2266,10 @@
   const privacyModal = document.getElementById('privacyModal');
   const privacyCloseBtn = document.getElementById('privacyCloseBtn');
   const privacyFooterLink = document.getElementById('privacyFooterLink');
+  const supportModal = document.getElementById('supportModal');
+  const supportCloseBtn = document.getElementById('supportCloseBtn');
+  const supportFooterLink = document.getElementById('supportFooterLink');
+
 
   function openTermsModal(){
     termsModal.classList.add('open');
@@ -2055,6 +2294,18 @@
   if(privacyFooterLink) privacyFooterLink.addEventListener('click', (e) => { e.preventDefault(); openPrivacyModal(); });
   if(privacyCloseBtn) privacyCloseBtn.addEventListener('click', closePrivacyModal);
   if(privacyModal) privacyModal.addEventListener('click', (e) => { if(e.target === privacyModal) closePrivacyModal(); });
+
+  function openSupportModal(){
+    supportModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSupportModal(){
+    supportModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if(supportFooterLink) supportFooterLink.addEventListener('click', (e) => { e.preventDefault(); openSupportModal(); });
+  if(supportCloseBtn) supportCloseBtn.addEventListener('click', closeSupportModal);
+  if(supportModal) supportModal.addEventListener('click', (e) => { if(e.target === supportModal) closeSupportModal(); });
 
   // Free / Pro task demo logic
   const FREE_TASK_LIMIT = 3;
@@ -2150,7 +2401,7 @@
     });
   }
   document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape'){ if(paywallModal.classList.contains('open')) closePaywallModal(); if(termsModal.classList.contains('open')) closeTermsModal(); if(privacyModal.classList.contains('open')) closePrivacyModal(); }
+    if(e.key === 'Escape'){ if(paywallModal.classList.contains('open')) closePaywallModal(); if(termsModal.classList.contains('open')) closeTermsModal(); if(privacyModal.classList.contains('open')) closePrivacyModal(); if(supportModal.classList.contains('open')) closeSupportModal(); }
   });
 
   updateDemoLimitLabel();
