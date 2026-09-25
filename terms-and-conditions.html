@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Alert — Terms &amp; Conditions.">
+    <title>Terms &amp; Conditions — Task Alert | Deific Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-950: #071510;
+            --green-900: #0f2a22;
+            --green-800: #183e32;
+            --green-700: #1f4e3f;
+            --green-500: #2d7a62;
+            --green-100: #e5efe9;
+            --green-50: #f2f7f4;
+            --yellow: #f6b93b;
+            --yellow-dark: #e8a520;
+            --cream: #fbfaf6;
+            --ink: #152a22;
+            --ink-soft: #5b6b63;
+            --line: #e7e4da;
+            --white: #ffffff;
+            --radius: 14px;
+            --shadow-sm: 0 4px 14px rgba(15, 42, 34, 0.05);
+            --shadow: 0 16px 40px rgba(15, 61, 46, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            color: var(--ink);
+            background: var(--cream);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(251, 250, 246, 0.94);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+            z-index: 100;
+        }
+
+        .header-wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--green-900);
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--green-900), var(--green-700));
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(15, 42, 34, 0.15);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border-radius: 999px;
+            background: #fff;
+            border: 1px solid var(--line);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--green-900);
+            transition: all .2s ease;
+        }
+
+        .back-link:hover {
+            background: var(--green-900);
+            color: #fff;
+            border-color: var(--green-900);
+            transform: translateY(-1px);
+        }
+
+        /* ===== Hero Banner ===== */
+        .legal-hero {
+            background: linear-gradient(180deg, #f2f7f4 0%, var(--cream) 100%);
+            padding: 48px 24px 24px;
+            text-align: center;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .legal-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--green-900);
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .legal-hero p {
+            color: var(--ink-soft);
+            font-size: 15px;
+            max-width: 620px;
+            margin: 0 auto 24px;
+        }
+
+        /* ===== Tab Navigation ===== */
+        .tab-nav {
+            display: inline-flex;
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 5px;
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 8px;
+        }
+
+        .tab-btn {
+            padding: 10px 24px;
+            border-radius: 999px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink-soft);
+            cursor: pointer;
+            transition: all .2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .tab-btn.active {
+            background: var(--green-900);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(15, 42, 34, 0.18);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--green-900);
+        }
+
+        /* ===== Content Container ===== */
+        .content-wrap {
+            max-width: 900px;
+            margin: 36px auto 80px;
+            padding: 0 24px;
+        }
+
+        .policy-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 44px 48px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .panel-header {
+            padding-bottom: 24px;
+            margin-bottom: 28px;
+            border-bottom: 2px solid #f2f1eb;
+        }
+
+        .panel-badge {
+            display: inline-block;
+            background: var(--green-50);
+            color: var(--green-700);
+            border: 1px solid var(--green-100);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .panel-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--green-900);
+            margin-bottom: 6px;
+        }
+
+        .panel-header .last-updated {
+            font-size: 13px;
+            color: var(--ink-soft);
+            font-weight: 500;
+        }
+
+        .intro-box {
+            background: var(--cream);
+            border-left: 4px solid var(--yellow);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: var(--ink);
+        }
+
+        .intro-box p + p {
+            margin-top: 10px;
+        }
+
+        /* ===== Sections Styling ===== */
+        .policy-section {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f2f1eb;
+        }
+
+        .policy-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .policy-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--green-900);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .policy-section p {
+            font-size: 15px;
+            color: var(--ink-soft);
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .policy-section p strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin: 12px 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .policy-section li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 14.5px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        .policy-section li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            color: var(--yellow-dark);
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .support-cta-box {
+            background: linear-gradient(135deg, var(--green-900), var(--green-800));
+            color: #fff;
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .support-cta-box h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .support-cta-box p {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .support-cta-btn {
+            background: var(--yellow);
+            color: var(--green-950);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            transition: all .2s ease;
+            white-space: nowrap;
+        }
+
+        .support-cta-btn:hover {
+            background: var(--yellow-dark);
+            transform: translateY(-1px);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--green-900);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 36px 24px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: var(--yellow);
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-sub {
+            margin-top: 8px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        /* ===== Back to top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            background: var(--green-900);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(15, 42, 34, 0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s ease;
+            z-index: 99;
+            font-size: 18px;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .policy-card {
+                padding: 28px 20px;
+                border-radius: 16px;
+            }
+
+            .legal-hero h1 {
+                font-size: 28px;
+            }
+
+            .tab-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
+            .support-cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Header Navigation -->
+    <header>
+        <div class="header-wrap">
+            <a href="index.html" class="brand">
+                <div class="brand-icon">⏰</div>
+                <span>Task Alert</span>
+            </a>
+            <a href="index.html" class="back-link">← Back to Task Alert</a>
+        </div>
+    </header>
+
+    <!-- Hero Title & Tab Switcher -->
+    <div class="legal-hero">
+        <h1>Terms &amp; Conditions</h1>
+        <p>Please read these terms carefully before accessing or using Task Alert.</p>
+        
+        <div class="tab-nav" role="tablist">
+            <a href="privacy-policy.html" class="tab-btn" role="tab">
+                🛡️ Privacy Policy
+            </a>
+            <a href="terms-and-conditions.html" class="tab-btn active" role="tab" aria-selected="true">
+                📜 Terms &amp; Conditions
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="content-wrap">
+        <div class="policy-card">
+            <div class="panel-header">
+                <span class="panel-badge">Terms of Service</span>
+                <h2>Task Alert — Terms &amp; Conditions</h2>
+                <div class="last-updated">Last Updated: September 2026</div>
+            </div>
+
+            <div class="intro-box">
+                <p>Welcome to Task Alert. These Terms &amp; Conditions govern your access to and use of the Task Alert application and related services. By creating an account or using Task Alert, you agree to comply with these Terms.</p>
+            </div>
+
+            <section class="policy-section">
+                <h3>1. About Task Alert</h3>
+                <p>Task Alert is a task-management and productivity application designed to help users create, organize, schedule, and manage tasks and tasks. Task Alert may be used for both personal and business purposes. It is a productivity tool and is not intended to replace professional, emergency, medical, legal, financial, or other critical services.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>2. User Accounts</h3>
+                <p>To use Task Alert, you must create an account. During registration, you may be required to provide your name, email address, and password. Your email address must be verified using the verification process provided by Task Alert. You are responsible for providing accurate information and maintaining the confidentiality of your login credentials. Your account is personal to you and you must not share credentials or allow unauthorized access. You are responsible for activities performed through your account and should notify us if you believe it has been accessed without authorization.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>3. Task and Task Data</h3>
+                <p>Users may create, edit, schedule, and delete tasks and tasks. You retain ownership of the task and other content that you create and submit to Task Alert. Task Alert processes and stores task information so the Service can provide task-management and task functionality and allow you to access your information. Task Alert does not sell your task content or use it for advertising purposes. Task information is not publicly displayed or shared with other users through the Service.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>4. Free Plan</h3>
+                <p>The Free Plan allows a user to create up to 3 tasks. Once the maximum of 3 tasks has been reached, the user cannot create additional tasks under the Free Plan. Deleting an existing task does not reset or increase the user's task-creation allowance. Additional task-management functionality may require a Pro subscription.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>5. Pro Subscription</h3>
+                <p>Task Alert offers a Pro subscription for ₹399 for 30 days. Pro provides unlimited task creation and the ability to reuse or repeat previously created tasks across selected dates or periods using available timeline/repeat functionality. Pro access remains available for 30 days from the applicable purchase/activation period. Pro subscriptions currently do not automatically renew. After the 30-day period expires, another purchase is required to continue using Pro features. We may introduce, modify, add, or remove subscription features in the future.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>6. Payments</h3>
+                <p>Payments for Pro subscriptions are processed through Razorpay or other payment-processing services made available by Task Alert. By making a purchase, you authorize the applicable payment provider to process the transaction according to its applicable terms and policies. Task Alert does not store your complete payment-card details on its own servers unless expressly stated otherwise.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>7. Refund Policy</h3>
+                <p>All Pro purchases are non-refundable, except where a refund is required by applicable law or where Task Alert determines that a technical payment issue requires corrective action. If payment is successfully deducted but Pro access is not activated due to a technical issue, you may contact Task Alert through the available support or ticket system. We may investigate and, where appropriate, activate the purchased service or take another appropriate corrective action.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>8. Notifications and Tasks</h3>
+                <p>Task Alert may send notifications relating to scheduled tasks and tasks. Depending on task settings, task notifications may be sent approximately 10 minutes before the scheduled task and at the scheduled task time. Delivery requires appropriate notification permissions. Task Alert does not guarantee that every notification will be delivered exactly on time or delivered at all. Notifications may be delayed, interrupted, or missed because of technical issues, device settings, operating-system restrictions, network conditions, third-party services, maintenance, or other circumstances outside our reasonable control. You remain responsible for monitoring and managing your tasks. Task Alert should not be used as the sole system for emergency, medical, life-critical, hazardous, legal, or other situations where task failure could result in serious harm or loss.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>9. Acceptable Use</h3>
+                <p>You agree to use Task Alert only for lawful purposes. You agree not to:</p>
+                <ul>
+                    <li>Use Task Alert for illegal activities.</li>
+                    <li>Attempt to access another user's account or information without authorization.</li>
+                    <li>Attempt unauthorized access to our systems, servers, databases, or infrastructure.</li>
+                    <li>Hack, reverse engineer, decompile, disassemble, or derive source code.</li>
+                    <li>Copy, modify, reproduce, distribute, or create unauthorized derivative versions.</li>
+                    <li>Introduce malware, viruses, malicious code, or harmful material.</li>
+                    <li>Use the Service for spam, abuse, harassment, or malicious activities.</li>
+                    <li>Disrupt, damage, overload, or interfere with the Service or infrastructure.</li>
+                    <li>Circumvent security measures, usage limits, or access restrictions.</li>
+                    <li>Violate applicable laws or regulations.</li>
+                </ul>
+                <p>We reserve the right to take appropriate action against accounts involved in prohibited activities.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>10. Intellectual Property</h3>
+                <p>Task Alert and its underlying technology are owned by or licensed to Task Alert, including the Task Alert name, logo and branding, application design and user interface, source code, software, features, graphics, text, and other proprietary materials. Except for the limited right to use the Service in accordance with these Terms, no ownership rights are transferred to you. You may not copy, reproduce, modify, distribute, sell, license, reverse engineer, or create derivative works from any part of Task Alert without prior written permission. Your ownership of content created within the Service remains unaffected.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>11. Service Availability</h3>
+                <p>We aim to keep Task Alert available and functional, but do not guarantee that the Service will always be available, uninterrupted, error-free, secure, or free from bugs or technical issues. Task Alert may occasionally be unavailable because of maintenance, upgrades, server issues, security measures, technical problems, or circumstances beyond our reasonable control. We may modify, update, improve, suspend, or discontinue parts of the Service when reasonably necessary.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>12. Changes to Features and Plans</h3>
+                <p>Task Alert may add, modify, improve, restrict, or remove features from the Free or Pro versions. We may also introduce new plans, features, pricing structures, or functionality. If the Pro subscription price changes, the new price will apply to future purchases and will not alter an already-purchased 30-day Pro period.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>13. Third-Party Services</h3>
+                <p>Task Alert may rely on third-party providers for payment processing, email delivery, notifications, hosting, infrastructure, or other technical services, including providers such as Razorpay, Expo, Firebase, Resend, Gmail, hosting providers, or other services used from time to time. Your use of third-party services may also be subject to their own terms and policies. Task Alert is not responsible for interruptions, failures, or limitations caused solely by third-party services.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>14. Account Suspension and Termination</h3>
+                <p>Task Alert may suspend or terminate your account if we reasonably determine that you violated these Terms or engaged in prohibited, fraudulent, abusive, illegal, or security-threatening activity. This applies to Free and Pro accounts. If termination results from a violation, you will not be entitled to a refund for an unused Pro period, except where required by applicable law. Following termination, task and account data may be retained for a limited period for operational, security, legal, or other legitimate purposes and may subsequently be deleted in accordance with our data-retention practices and Privacy Policy.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>15. Disclaimer</h3>
+                <p>Task Alert is provided as a productivity and task-management service. We do not guarantee that tasks will always be available without interruption, notifications will always be delivered or arrive at the exact intended time, the Service will always be free from errors, or data/functionality will never be temporarily unavailable. You use Task Alert at your own discretion and risk. Task Alert is not an emergency alert system and should not be relied upon for emergency, medical, legal, financial, safety-critical, or life-critical matters.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>16. Limitation of Liability</h3>
+                <p>To the maximum extent permitted by applicable law, Task Alert and its owners, operators, employees, affiliates, and service providers will not be liable for indirect, incidental, consequential, special, or punitive damages arising from or related to your use of, or inability to use, the Service. This includes, where permitted by law, losses resulting from missed, delayed, or failed notifications, task availability issues, service interruptions, technical failures, device issues, network problems, or reliance on the Service for critical matters. Nothing in these Terms is intended to exclude or limit liability that cannot legally be excluded or limited under applicable law.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>17. Privacy Policy</h3>
+                <p>Your use of Task Alert is also governed by our Privacy Policy, which explains how we collect, use, store, and protect personal information. Our Privacy Policy forms part of these Terms.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>18. Changes to These Terms</h3>
+                <p>We may update these Terms from time to time to reflect changes to the Service, features, pricing, legal requirements, or business practices. When changes are made, we may update the Last Updated date and, where appropriate, provide notice through the application or other reasonable means. Continued use of Task Alert after updated Terms become effective constitutes acceptance of the revised Terms, to the extent permitted by applicable law.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>19. Governing Law</h3>
+                <p>These Terms shall be governed by and interpreted in accordance with the applicable laws of India, without regard to conflict-of-law principles. Any disputes relating to these Terms or the Service shall be subject to the jurisdiction of the courts having appropriate jurisdiction in India, subject to applicable law.</p>
+            </section>
+
+            <section class="policy-section">
+                <h3>20. Contact Us</h3>
+                <p>If you have questions, concerns, complaints, or support requests regarding these Terms or Task Alert, you may contact us through the support/contact options provided within the application or through our designated support contact.</p>
+            </section>
+
+            <div class="support-cta-box">
+                <div>
+                    <h4>Need clarification on our terms?</h4>
+                    <p>Our team is here to assist with any questions about Task Alert.</p>
+                </div>
+                <a href="mailto:deific.solution@hotmail.com" class="support-cta-btn">Contact Legal Support</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 <a href="https://www.deificdigital.com" target="_blank" rel="noopener noreferrer">Deific Digital</a>. All rights reserved.</p>
+        <div class="footer-sub">Task Alert is a productivity product created and maintained by Deific Digital.</div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <script>
+        // Back to top visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+
+</html>
