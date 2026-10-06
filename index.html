@@ -4424,7 +4424,7 @@
                         <li><span class="tick">✓</span> Additional Pro functionality</li>
                         <li><span class="tick">✓</span> 30 days of Pro access</li>
                     </ul>
-                    <a href="#" class="btn btn-white" id="pricingProBtn">Upgrade to Pro</a>
+                    <a href="checkout.html" class="btn btn-white" id="pricingProBtn">Upgrade to Pro</a>
                 </div>
             </div>
         </div>
@@ -4657,9 +4657,12 @@
                         href="https://www.deificdigital.com" target="_blank" rel="noopener noreferrer"
                         class="deific-link">Deific Digital</a>.</span>
                 <div class="flinks">
-                    <a href="privacy-policy.html" id="privacyFooterLink" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                    <a href="terms-and-conditions.html" id="termsFooterLink" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
-                    <a href="delete-account.html" id="deleteAccountFooterLink" target="_blank" rel="noopener noreferrer">Delete Account</a>
+                    <a href="privacy-policy.html" id="privacyFooterLink" target="_blank"
+                        rel="noopener noreferrer">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" id="termsFooterLink" target="_blank"
+                        rel="noopener noreferrer">Terms &amp; Conditions</a>
+                    <a href="delete-account.html" id="deleteAccountFooterLink" target="_blank"
+                        rel="noopener noreferrer">Delete Account</a>
                     <a href="#help" id="supportFooterLink">Support</a>
                 </div>
             </div>
@@ -5139,7 +5142,7 @@
                 <li><span class="tick">✓</span> Timeline &amp; repeat functionality</li>
                 <li><span class="tick">✓</span> 30 days of Pro access</li>
             </ul>
-            <a href="#pricing" class="btn btn-primary" id="modalUpgradeBtn">Upgrade to Pro</a>
+            <a href="checkout.html" class="btn btn-primary" id="modalUpgradeBtn">Upgrade to Pro</a>
             <button class="modal-later" id="modalLaterBtn">Maybe later</button>
         </div>
     </div>
@@ -5357,6 +5360,7 @@
         if (modalUpgradeBtn) {
             modalUpgradeBtn.addEventListener('click', () => {
                 closePaywallModal();
+                window.location.href = 'checkout.html';
             });
         }
         document.addEventListener('keydown', (e) => {
