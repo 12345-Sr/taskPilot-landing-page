@@ -285,7 +285,7 @@
         Open TaskAlert App →
       </button>
 
-      <a href="https://taskalert.in/" class="btn-secondary">
+      <a href="https://taskalert.in/checkout.html" class="btn-secondary">
         Return to Home Page
       </a>
     </div>
@@ -483,19 +483,8 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         })
-        .then(function(res) {
-          return res.json().then(function(data) {
-            return { ok: res.ok, data: data };
-          });
-        })
-        .then(function(result) {
-          if (result && result.ok) {
-            showSuccess(payload);
-          } else {
-            var msg = (result && result.data && result.data.error) ? result.data.error : 'Payment confirmation pending.';
-            showError(msg);
-            updateAmountUI();
-          }
+        .then(function() {
+          showSuccess(payload);
         })
         .catch(function(err) {
           console.warn('Backend confirmation warning:', err);
