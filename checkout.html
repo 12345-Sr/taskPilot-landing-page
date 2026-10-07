@@ -285,7 +285,7 @@
         Open TaskAlert App →
       </button>
 
-      <a href="https://taskalert.in/checkout.html" class="btn-secondary">
+      <a href="https://taskalert.in/" class="btn-secondary">
         Return to Home Page
       </a>
     </div>
@@ -293,103 +293,54 @@
 </div>
 
 <script>
-  function qp(name) {
-    try {
-      return new URLSearchParams(window.location.search).get(name) || '';
-    } catch (e) {
-      return '';
-    }
-  }
+  var API = 'https://api-task-pilot.deificglobal.tech';
+  var code = '';
+  try { code = new URLSearchParams(window.location.search).get('c') || ''; } catch (e) {}
 
-  var orderId = qp('order_id');
-  var userId = qp('user_id');
-  var keyId = qp('key_id');
-  var amountPaise = parseInt(qp('amount') || '39900', 10);
-  var currency = qp('currency') || 'INR';
-  var userName = qp('name') || 'TaskAlert User';
-  var userEmail = qp('email') || '';
-  var userPhone = qp('phone') || '';
-  var apiBase = qp('api_base') || 'https://api-task-pilot.deificglobal.tech';
-  if (!apiBase || apiBase.indexOf('file:') === 0 || apiBase === 'null') {
-    apiBase = 'https://api-task-pilot.deificglobal.tech';
-  }
+  var session = null;   // { keyId, orderId, amountPaise, currency, name, email, phone }
 
   var btn = document.getElementById('pay-btn');
   var displayAmount = document.getElementById('display-amount');
   var errorBanner = document.getElementById('error-banner');
 
-  function updateAmountUI() {
-    var rupees = (amountPaise / 100).toFixed(0);
-    displayAmount.innerText = '₹' + rupees;
-    if (keyId) {
-      btn.innerHTML = '<span>Pay ₹' + rupees + ' with Razorpay</span>';
-      btn.disabled = false;
-    }
-  }
-
   function showError(msg) {
-    if (!errorBanner) return;
     errorBanner.style.display = 'block';
     errorBanner.innerHTML = '⚠️ ' + msg;
   }
+  function clearError() { errorBanner.style.display = 'none'; errorBanner.innerHTML = ''; }
 
-  function clearError() {
-    if (!errorBanner) return;
-    errorBanner.style.display = 'none';
-    errorBanner.innerHTML = '';
+  function setReady() {
+    var rupees = (session.amountPaise / 100).toFixed(0);
+    displayAmount.innerText = '₹' + rupees;
+    btn.innerHTML = '<span>Pay ₹' + rupees + ' with Razorpay</span>';
+    btn.disabled = false;
   }
 
-  // 1. Fetch public key & web order dynamically if not supplied in query params
-  function initOrder() {
-    if (keyId && orderId) {
-      updateAmountUI();
+  // Load the order the app created. No key/secret/user data is ever read from the URL,
+  // and no anonymous fallback order is created any more.
+  function init() {
+    if (!code) {
+      btn.innerHTML = '<span>Open from the app</span>';
+      showError('Please open the TaskAlert app and tap <b>Upgrade to Pro</b> to start payment.');
       return;
     }
-
-    btn.disabled = true;
-    btn.innerHTML = '<span>Preparing order… ⏳</span>';
-
-    var webOrderUrl = (apiBase.replace(/\/$/, '')) + '/api/subscription/create-web-order';
-    fetch(webOrderUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user_id: userId })
-    })
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
-      if (data && (data.keyId || data.orderId)) {
-        if (data.keyId) keyId = data.keyId;
-        if (data.orderId) orderId = data.orderId;
-        if (data.amountPaise) amountPaise = data.amountPaise;
-        updateAmountUI();
-      } else {
-        fetchPublicKeyFallback();
-      }
-    })
-    .catch(function() {
-      fetchPublicKeyFallback();
-    });
-  }
-
-  function fetchPublicKeyFallback() {
-    var pubKeyUrl = (apiBase.replace(/\/$/, '')) + '/api/subscription/public-key';
-    fetch(pubKeyUrl)
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        if (data && data.keyId) {
-          keyId = data.keyId;
-          if (data.amountPaise) amountPaise = data.amountPaise;
-          updateAmountUI();
-        } else {
-          showError('Payment gateway key is being configured on the server. Please try again in a few moments.');
+    fetch(API + '/api/subscription/checkout-session?c=' + encodeURIComponent(code))
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (x) {
+        if (!x.ok || !x.d.orderId || !x.d.keyId) {
+          btn.innerHTML = '<span>Unavailable</span>';
+          showError(x.d.error || 'Could not load your order. Please retry from the app.');
+          return;
         }
+        session = x.d;
+        setReady();
       })
-      .catch(function() {
-        showError('Could not connect to payment backend server. Please verify your connection.');
+      .catch(function () {
+        btn.innerHTML = '<span>Unavailable</span>';
+        showError('Could not connect to the server. Check your internet and reload.');
       });
   }
-
-  initOrder();
+  init();
 
   function returnToApp(path, params) {
     var qs = Object.keys(params || {}).map(function (k) {
@@ -397,70 +348,71 @@
     }).join('&');
     var intentUrl = 'intent://' + path + '?' + qs + '#Intent;scheme=TaskAlert;package=com.taskalert.app;end';
     var customScheme = 'TaskAlert://' + path + '?' + qs;
-
     try { window.location.href = customScheme; } catch (e) {}
-    setTimeout(function () {
-      try { window.location.href = intentUrl; } catch (e) {}
-    }, 400);
+    setTimeout(function () { try { window.location.href = intentUrl; } catch (e) {} }, 400);
   }
 
   function showSuccess(payload) {
     document.getElementById('payment-view').style.display = 'none';
-    var sv = document.getElementById('success-view');
-    sv.style.display = 'block';
-    if (payload && payload.razorpay_payment_id) {
-      document.getElementById('success-payment-id').innerText = payload.razorpay_payment_id;
-    }
-
-    var appBtn = document.getElementById('app-btn');
-    appBtn.addEventListener('click', function() {
+    document.getElementById('success-view').style.display = 'block';
+    document.getElementById('success-payment-id').innerText = payload.razorpay_payment_id || 'Confirmed';
+    document.getElementById('app-btn').addEventListener('click', function () {
       returnToApp('payment-success', payload);
     });
-
-    // Auto-attempt redirect to app if on mobile
     returnToApp('payment-success', payload);
+  }
+
+  // Success screen is shown ONLY when the server confirms Pro is activated.
+  function confirmPayment(payload, attempt) {
+    fetch(API + '/api/subscription/public-confirm', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        code: code,
+        razorpay_order_id: payload.razorpay_order_id,
+        razorpay_payment_id: payload.razorpay_payment_id,
+        razorpay_signature: payload.razorpay_signature
+      })
+    })
+    .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+    .then(function (x) {
+      if (x.ok && x.d.ok) { showSuccess(payload); return; }
+      throw new Error(x.d.error || 'Confirmation failed');
+    })
+    .catch(function (err) {
+      if (attempt < 3) { setTimeout(function () { confirmPayment(payload, attempt + 1); }, 2000); return; }
+      btn.innerHTML = '<span>Payment received</span>';
+      btn.disabled = true;
+      showError('Payment <b>' + payload.razorpay_payment_id + '</b> was received but activation failed (' +
+        err.message + '). Do NOT pay again. Please contact support@taskalert.in with this payment ID.');
+    });
   }
 
   function launch() {
     clearError();
-    if (typeof Razorpay === 'undefined') {
-      showError('Payment gateway script failed to load. Please check your internet connection.');
-      return;
-    }
-    if (!keyId) {
-      showError('Payment gateway key not loaded yet. Please wait a second and retry.');
-      return;
-    }
+    if (typeof Razorpay === 'undefined') { showError('Payment gateway script failed to load. Check your internet connection.'); return; }
+    if (!session) { showError('Order not loaded. Please reopen checkout from the app.'); return; }
 
     btn.disabled = true;
     btn.innerHTML = '<span>Opening Razorpay… ⏳</span>';
 
     var options = {
-      key: keyId,
-      amount: amountPaise,
-      currency: currency,
+      key: session.keyId,
+      order_id: session.orderId,     // amount is taken from the order
+      currency: session.currency,
       name: 'TaskAlert Pro',
       description: '30-Day Pro Subscription',
-      prefill: {
-        name: userName,
-        email: userEmail,
-        contact: userPhone
-      },
+      prefill: { name: session.name, email: session.email, contact: session.phone },
       theme: { color: '#C5A059' },
       config: {
         display: {
           blocks: {
-            upi_intent_block: {
-              name: 'Pay using UPI apps',
-              instruments: [{ method: 'upi', flows: ['intent'] }]
-            },
+            upi_intent_block: { name: 'Pay using UPI apps', instruments: [{ method: 'upi', flows: ['intent'] }] },
             other_methods_block: {
               name: 'Other payment methods',
               instruments: [
                 { method: 'upi', flows: ['collect', 'qr'] },
-                { method: 'card' },
-                { method: 'netbanking' },
-                { method: 'wallet' }
+                { method: 'card' }, { method: 'netbanking' }, { method: 'wallet' }
               ]
             }
           },
@@ -470,54 +422,27 @@
       },
       handler: function (response) {
         btn.innerHTML = '<span>Activating Pro Plan… ⏳</span>';
-        var payload = {
+        confirmPayment({
           razorpay_payment_id: response.razorpay_payment_id || '',
-          razorpay_order_id: response.razorpay_order_id || orderId,
-          razorpay_signature: response.razorpay_signature || '',
-          user_id: userId
-        };
-
-        var targetEndpoint = (apiBase.replace(/\/$/, '')) + '/api/subscription/public-confirm';
-        fetch(targetEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        })
-        .then(function() {
-          showSuccess(payload);
-        })
-        .catch(function(err) {
-          console.warn('Backend confirmation warning:', err);
-          showSuccess(payload);
-        });
+          razorpay_order_id: response.razorpay_order_id || session.orderId,
+          razorpay_signature: response.razorpay_signature || ''
+        }, 1);
       },
-      modal: {
-        ondismiss: function () {
-          updateAmountUI();
-        }
-      }
+      modal: { ondismiss: function () { setReady(); } }
     };
-
-    if (orderId) {
-      options.order_id = orderId;
-    }
 
     try {
       var rzp = new Razorpay(options);
       rzp.on('payment.failed', function (resp) {
-        updateAmountUI();
-        var reason = (resp && resp.error && resp.error.description) 
-          ? resp.error.description 
-          : 'Payment cancelled or failed. Please try again.';
-        showError(reason);
+        setReady();
+        showError((resp && resp.error && resp.error.description) || 'Payment failed. Please try again.');
       });
       rzp.open();
     } catch (e) {
-      updateAmountUI();
+      setReady();
       showError('Could not open payment window (' + (e && e.message ? e.message : 'error') + ').');
     }
   }
-
   btn.addEventListener('click', launch);
 </script>
 </body>
